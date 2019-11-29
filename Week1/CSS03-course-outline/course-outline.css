@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face{
+  font-family: "hei";
+  src: url(iconfont/simhei.ttf);
+}
+.box {
+  background: linear-gradient(to top left, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+.title {
+  font-family: "hei";
+  font-size: 32px;
+  color: #262626;
+}
+.part1-text {
+  font-size: 92px;
+  letter-spacing: 2.4px;
+  color: #ffffff;
+  margin: 30px;
+}
+.part2-container {
+  width: 44%;
+  padding: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin: 1.5%;
+  margin-bottom: 5%;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.part2-text {
+  font-size: 26px;
+  text-align: justify;
+  color: #018002;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 35px;
+}
+.part3-container {
+  width: 90%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+.photo-box {
+  width: 30%;
+  height: 0;
+  padding-bottom: 20%;
+  background-color: aquamarine;
+}
