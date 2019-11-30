@@ -3,28 +3,28 @@
   padding: 0;
 }
 @font-face {
-  font-family: "hei";
+  font-family: "simhei";
   src: url(iconfont/simhei.ttf);
 }
 .box {
+  padding-top: 100px;
   background: linear-gradient(to top left, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
 }
 .title {
-  font-family: Arial, "hei";
+  font-family: Arial, "simhei";
   font-size: 30px;
   color: #262626;
 }
 .part1-text {
+  margin: 40px;
+  font-family: Arial, "simhei";
   font-size: 92px;
   letter-spacing: 2.4px;
   color: #ffffff;
-  margin: 40px;
-  font-family: Arial, "hei";
   text-shadow: 0 15px 0 #131313, 0 14px 0 #131313, 0 13px 0 #131313, 0 12px 0 #131313, 0 11px 0 #131313,
                0 10px 0 #131313, 0 9px 0 #131313, 0 8px 0 #131313, 0 7px 0 #131313, 0 6px 0 #131313, 
                0 5px 0 #131313, 0 4px 0 #131313, 0 3px 0 #131313, 0 2px 0 #131313, 0 1px 0 #131313,
@@ -33,16 +33,16 @@
 .part2-decoration {
   width: 650px;
   height: 25px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row-reverse;
   overflow: hidden;
-  margin-top: 20px;
 }
 .part2-rectangle {
   flex: 1;
   height: 100%;
-  background-color: #ffffff;
   border-top-left-radius: 5px;
+  background-color: #ffffff;
 }
 .part2-triangle {
   width: 25px;
@@ -53,53 +53,53 @@
 .part2-container {
   width: 650px;
   margin-bottom: 5%;
-  background-color: #ffffff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  background-color: #ffffff;
 }
 .part2-text {
-  font-size: 26px;
-  text-align: justify;
-  color: #018002;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 35px;
   margin: 5%;
   margin-top: 0;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  line-height: 35px;
+  color: #018002;
 }
 .part2-text::before { 
-  content: "“";
-  color: #018002;
-  font-size: 110px;
   position: relative;
   top: 55px;
+  content: "“";
+  font-size: 110px;
   line-height: 0;
+  color: #018002;
 }
 .part2-text::after { 
-  content: "”";
-  color: #018002;
-  font-size: 110px;
   position: relative;
   top: 55px;
+  content: "”";
+  font-size: 110px;
   line-height: 0;
+  color: #018002;
 }
 
 .part3-container {
+  padding-top: 3%;
+  padding-bottom: 4%;
   width: 88%;
   display: flex;
   justify-content: space-between;
-  padding-top: 3%;
-  padding-bottom: 4%;
 }
 .photo-box {
   width: 30%;
   height: 200px;
-  overflow: hidden;
   background-position: center;
   background-size: cover;
   background-color: #ffffff;
   border-color: #ffffff;
   border-width: 10px;
   border-style: solid;
+  overflow: hidden;
 }
 .img-1 {
   background-image: url(image/empire-state.png);
@@ -114,36 +114,37 @@
   background-image: none;
 }
 .img-cover {
+  padding: 20px;
   height: 85%;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 20px;
-  opacity: 0;;
 }
 .img-cover:hover {
   opacity: 1;
 }
 .img-title {
-  font-family: "Times New Roman", Times, serif;
-  color: #ffffff;
-  font-size: 20px;
   text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: #ffffff;
 }
 .img-detail {
+  text-align: center;
   font-family: "Times New Roman", Times, serif;
-  color: #ffffff;
   font-style: italic;
   font-size: 15px;
-  text-align: center;
+  color: #ffffff;
 }
 .img-link {
+  padding: 10px;
+  text-decoration: none;
   font-family: "Times New Roman", Times, serif;
   background-color: black;
-  padding: 10px;
+  font-size: 15px;
   color: #ffffff;
-  text-decoration: none;
 }
 .cover-1 {
   background-color: rgba(58, 1, 132, 0.44);
@@ -164,24 +165,24 @@
   flex-direction: column;
 }
 .part4-triangle {
+  margin: 0 auto;
   height: 0;
   width: 0;
-  margin: 0 auto;
   border-width: 10px 20px 20px 20px;
   border-style: solid;
   border-color: transparent transparent #ffffff transparent;
 }
 .part4-rectangle {
-  background-color: #ffffff;
-  border-radius: 5px;
   margin-bottom: 100px;
   padding: 4%;
   column-count: 3;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 .part4-text {
-  font-family: serif;
-  color: #262626;
-  font-size: 16px;
-  text-align: justify;
   margin-bottom: 20px;
+  text-align: justify;
+  font-family: serif;
+  font-size: 16px;
+  color: #262626;
 }
