@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
-@font-face{
+@font-face {
   font-family: "hei";
   src: url(iconfont/simhei.ttf);
 }
@@ -16,24 +16,46 @@
 }
 .title {
   font-family: "hei";
-  font-size: 32px;
+  font-size: 30px;
   color: #262626;
 }
 .part1-text {
   font-size: 92px;
   letter-spacing: 2.4px;
   color: #ffffff;
-  margin: 30px;
+  margin: 40px;
+  font-family: Arial, "hei";
+  text-shadow: 0 15px 0 #131313, 0 14px 0 #131313, 0 13px 0 #131313, 0 12px 0 #131313, 0 11px 0 #131313,
+               0 10px 0 #131313, 0 9px 0 #131313, 0 8px 0 #131313, 0 7px 0 #131313, 0 6px 0 #131313, 
+               0 5px 0 #131313, 0 4px 0 #131313, 0 3px 0 #131313, 0 2px 0 #131313, 0 1px 0 #131313,
+               0 20px 15px #000000;
 }
+.part2-decoration {
+  width: 650px;
+  height: 25px;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.part2-rectangle {
+  flex: 1;
+  height: 100%;
+  background-color: #ffffff;
+  border-top-left-radius: 5px;
+}
+.part2-triangle {
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(to bottom left, transparent 18px, #ffffff 1px, #898989)
+}
+
 .part2-container {
-  width: 44%;
-  padding: 2%;
-  padding-left: 3%;
-  padding-right: 3%;
-  margin: 1.5%;
+  width: 650px;
   margin-bottom: 5%;
   background-color: #ffffff;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .part2-text {
   font-size: 26px;
@@ -41,16 +63,125 @@
   color: #018002;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 35px;
+  margin: 5%;
+  margin-top: 0;
 }
+.part2-text::before { 
+  content: "“";
+  color: #018002;
+  font-size: 110px;
+  position: relative;
+  top: 55px;
+  line-height: 0;
+}
+.part2-text::after { 
+  content: "”";
+  color: #018002;
+  font-size: 110px;
+  position: relative;
+  top: 55px;
+  line-height: 0;
+}
+
 .part3-container {
-  width: 90%;
-  background-color: #ffffff;
+  width: 88%;
   display: flex;
   justify-content: space-between;
+  padding-top: 3%;
+  padding-bottom: 4%;
 }
 .photo-box {
   width: 30%;
+  height: 200px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-width: 10px;
+  border-style: solid;
+}
+.img-1 {
+  background-image: url(image/empire-state.png);
+}
+.img-2 {
+  background-image: url(image/midtown.png);
+}
+.img-3 {
+  background-image: url(image/liberty.png);
+}
+.img-3:hover {
+  background-image: none;
+}
+.img-cover {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  opacity: 0;;
+}
+.img-cover:hover {
+  opacity: 1;
+}
+.img-title {
+  font-family: "Times New Roman", Times, serif;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
+.img-detail {
+  font-family: "Times New Roman", Times, serif;
+  color: #ffffff;
+  font-style: italic;
+  font-size: 15px;
+  text-align: center;
+}
+.img-link {
+  font-family: "Times New Roman", Times, serif;
+  background-color: black;
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.cover-1 {
+  background-color: rgba(58, 1, 132, 0.44);
+}
+.cover-3 {
+  background-color: rgba(255, 231, 179, 0.3);
+}
+.text-3 {
+  color: #000000;
+}
+.img-line {
+  width: 80%;
   height: 0;
-  padding-bottom: 20%;
-  background-color: aquamarine;
+}
+.part4-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.part4-triangle {
+  height: 0;
+  width: 0;
+  margin: 0 auto;
+  border-width: 10px 20px 20px 20px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+.part4-rectangle {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 100px;
+  padding: 4%;
+  column-count: 3;
+}
+.part4-text {
+  font-family: serif;
+  color: #262626;
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 20px;
 }
