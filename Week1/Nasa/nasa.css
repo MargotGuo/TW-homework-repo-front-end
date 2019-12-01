@@ -26,3 +26,8 @@ body {
     background-color: #357376;
   }
 } 
+@media screen and (max-device-width: 500px) {
+  body {
+    background-color: red;
+  }
+} 
