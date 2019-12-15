@@ -1,23 +1,36 @@
 function toCamelStyle(sentence) {
-  var strArr = sentence.split('_');
-  if (strArr[0] !== '') {
-    var startIndex = 1;
-    var beginner = '';
-  }
-  else {
-    var startIndex = 2;
-    var beginner = '_';
-  }
-  strArr = firstCap(startIndex, strArr);
-  var newStr = beginner + strArr.join('');
-  return newStr;
+  var underlineLength = split(sentence);
+  var str1 = sentence.substr(0, underlineLength);
+  var str2 = sentence.substr(underlineLength);
+
+  var str3 = toCaption(str2);
+  var result = str1.concat(str3);
+  return result;
 }
 
-function firstCap(startIndex, strArr) {
-  for (var index = startIndex, len = strArr.length; index < len; index++) {
-    strArr[index] = strArr[index].replace(strArr[index][0], strArr[index][0].toUpperCase());
+function split(sentence) {
+  var underlineLength = 0;
+  for (var index = 0, len = sentence.length; index < len; index++) {
+    if (sentence[index] !== '_') {
+      break;
+    }
+    underlineLength++;
   }
-  return strArr;
+  return underlineLength;
+}
+
+function toCaption(inputStr) {
+  var outputStr = inputStr.charAt(0);
+  for (var index = 1, len = inputStr.length; index < len; index++) {
+    if (inputStr.charAt(index) === '_') {
+      continue;
+    } else if (inputStr.charAt(index - 1) === '_') {
+      outputStr += inputStr.charAt(index).toUpperCase()
+    } else {
+      outputStr += inputStr.charAt(index);
+    }
+  }
+  return outputStr;
 }
 
 var name1 = toCamelStyle('abc_bcd');  // 输出 'abcBcd'

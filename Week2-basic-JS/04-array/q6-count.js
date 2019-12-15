@@ -5,11 +5,12 @@ console.log(out);
 function count(inputArr) {
   var arrCount = {};
   for (var index = 0, len = inputArr.length; index < len; index++) {
-    if (arrCount.hasOwnProperty(inputArr[index])) {
-      arrCount[inputArr[index]] += 1;
+    var key = inputArr[index];
+    if (arrCount.hasOwnProperty(key)) {
+      arrCount[key] += 1;
     }
     else {
-      arrCount[inputArr[index]] = 1;
+      arrCount[key] = 1;
     }
   }
   var result = findMax(arrCount);
@@ -18,14 +19,12 @@ function count(inputArr) {
 
 function findMax(inputObj) {
   var max = 0;
+  var maxKey;
   for (var key in inputObj) {
     if (max < inputObj[key]) {
       max = inputObj[key];
+      maxKey = key;
     }
   }
-  for (key in inputObj) {
-    if (inputObj[key] === max) {
-      return key;
-    }
-  }
+  return maxKey;
 }
