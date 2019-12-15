@@ -1,6 +1,6 @@
 var sentence = 'good afternoon, mr mike.';
-var sentence2 = capFirstLetter(sentence);
-console.log(sentence2);
+var newSentence = capFirstLetter(sentence);
+console.log(newSentence);
 
 function capFirstLetter(sentence) {
   var newArr = sentence.split(' ');

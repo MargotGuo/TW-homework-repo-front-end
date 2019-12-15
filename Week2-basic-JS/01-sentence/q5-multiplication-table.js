@@ -2,12 +2,12 @@ var table = multiplicationTable(9);
 console.log(table);
 
 function multiplicationTable(max) {
-  var temp = '';
+  var result = '';
   for (var row = 1; row <= max; row++) {
     for (var column = 1; column <= row; column++) {
-      temp += row + '*' + column + '=' + row * column + ' ';
+      result += row + '*' + column + '=' + row * column + ' ';
     }
-    temp += '\n';
+    result += '\n';
   }
-  return temp;
+  return result;
 }

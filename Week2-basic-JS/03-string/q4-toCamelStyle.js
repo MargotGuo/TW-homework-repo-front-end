@@ -22,8 +22,9 @@ function firstCap(startIndex, strArr) {
 
 var name1 = toCamelStyle('abc_bcd');  // 输出 'abcBcd'
 var name2 = toCamelStyle('a_3_c_d_ef');  // 输出 'a3CDEf'
-var name3 = toCamelStyle('_a_b_c_d_ef');  // 输出 '_aBCDEf'
-
+var name3 = toCamelStyle('_a_b_c_d_ef');  // 输出 '_aBCDEf
+var name4 = toCamelStyle('__a_b_c_d_ef');  // 输出 '__aBCDEf
 console.log(name1);
 console.log(name2);
 console.log(name3);
+console.log(name4);

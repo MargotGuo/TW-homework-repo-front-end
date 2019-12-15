@@ -1,13 +1,13 @@
 var outputStar = star(6);
 console.log(outputStar);
 
-function star(line) {
-  var temp = '';
-  for (var row = 1; row <= line; row++) {
-    for (var column = row; column <= line; column++) {
-      temp += '* ';
+function star(maxLine) {
+  var result = '';
+  for (var row = 1; row <= maxLine; row++) {
+    for (var column = row; column <= maxLine; column++) {
+      result += '* ';
     }
-    temp += '\n';
+    result += '\n';
   }
-  return temp;
+  return result;
 }
