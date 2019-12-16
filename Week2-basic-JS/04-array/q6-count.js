@@ -6,10 +6,9 @@ function count(inputArr) {
   var arrCount = {};
   for (var index = 0, len = inputArr.length; index < len; index++) {
     var key = inputArr[index];
-    if (arrCount.hasOwnProperty(key)) {
+    if (arrCount[key]) {
       arrCount[key] += 1;
-    }
-    else {
+    } else {
       arrCount[key] = 1;
     }
   }
@@ -18,11 +17,11 @@ function count(inputArr) {
 }
 
 function findMax(inputObj) {
-  var max = 0;
+  var maxNum = 0;
   var maxKey;
   for (var key in inputObj) {
-    if (max < inputObj[key]) {
-      max = inputObj[key];
+    if (maxNum < inputObj[key]) {
+      maxNum = inputObj[key];
       maxKey = key;
     }
   }
