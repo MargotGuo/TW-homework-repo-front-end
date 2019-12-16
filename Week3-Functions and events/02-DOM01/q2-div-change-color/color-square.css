@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  position: relative;
+  height: 800px;
+  width: 1000px;
+  background-color: #EEEEEE;
+  margin: 100px;
+}
+
+#static {
+  position: absolute;
+  left: 200px;
+  top: 300px;
+  height: 80px;
+  width: 80px;
+  background-color: yellow;
+}
+
+#move {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  background-color: green;
+}
