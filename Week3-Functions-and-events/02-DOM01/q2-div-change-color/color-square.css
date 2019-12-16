@@ -5,7 +5,12 @@
 
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 50px;
 }
 
 #container {
@@ -13,7 +18,7 @@ body {
   height: 800px;
   width: 1000px;
   background-color: #EEEEEE;
-  margin: 100px;
+  margin-bottom: 50px;
 }
 
 #static {
