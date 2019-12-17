@@ -8,11 +8,11 @@ window.onload = function () {
   document.addEventListener('mouseup', endMove);
   document.addEventListener('mousemove', move);
 
-  function initMove(mousePosition) {
-    if (mousePosition.target === moveDiv) {
+  function initMove(mouseEvent) {
+    if (mouseEvent.target === moveDiv) {
       dragStatus = true;
-      mouseToBorderX = mousePosition.clientX - moveDiv.getBoundingClientRect().left;
-      mouseToBorderY = mousePosition.clientY - moveDiv.getBoundingClientRect().top;
+      mouseToBorderX = mouseEvent.clientX - moveDiv.getBoundingClientRect().left;
+      mouseToBorderY = mouseEvent.clientY - moveDiv.getBoundingClientRect().top;
     }
   }
 
@@ -20,12 +20,12 @@ window.onload = function () {
     dragStatus = false;
   }
 
-  function move(mousePosition) {
+  function move(mouseEvent) {
     if (dragStatus) {
       var boxX = boxDiv.getBoundingClientRect().left;
       var boxY = boxDiv.getBoundingClientRect().top;
-      var tempPositionX = mousePosition.clientX - mouseToBorderX - boxX;
-      var tempPositionY = mousePosition.clientY - mouseToBorderY - boxY;
+      var tempPositionX = mouseEvent.clientX - mouseToBorderX - boxX;
+      var tempPositionY = mouseEvent.clientY - mouseToBorderY - boxY;
       var finalPositionX = decideBorderRange(tempPositionX, tempPositionY)[0];
       var finalPositionY = decideBorderRange(tempPositionX, tempPositionY)[1];
       moveDiv.style.left = finalPositionX + 'px';
