@@ -1,62 +1,73 @@
 window.onload = function () {
-  var moveDiv = document.getElementById('move');
-  var staticDiv = document.getElementById('static');
   var boxDiv = document.getElementById('container');
+  var moveDiv = document.getElementById('move');
   var dragStatus;
-  var mouseToBorderBiasX;
-  var mouseToBorderBiasY;
+  var mouseToBorderX;
+  var mouseToBorderY;
+  document.addEventListener('mousedown', initMove);
+  document.addEventListener('mouseup', endMove);
+  document.addEventListener('mousemove', move);
 
-  document.addEventListener('mousedown', (mousePosition) => {
+  function initMove(mousePosition) {
     if (mousePosition.target === moveDiv) {
       dragStatus = true;
-      mouseToBorderBiasX = mousePosition.clientX - moveDiv.getBoundingClientRect().left;
-      mouseToBorderBiasY = mousePosition.clientY - moveDiv.getBoundingClientRect().top;
+      mouseToBorderX = mousePosition.clientX - moveDiv.getBoundingClientRect().left;
+      mouseToBorderY = mousePosition.clientY - moveDiv.getBoundingClientRect().top;
     }
-  });
+  }
 
-  document.addEventListener('mouseup', () => {
+  function endMove() {
     dragStatus = false;
-  });
+  }
 
-  document.addEventListener('mousemove', (mousePosition) => {
-    var boxX = boxDiv.getBoundingClientRect().left;
-    var boxY = boxDiv.getBoundingClientRect().top;
-
+  function move(mousePosition) {
     if (dragStatus) {
-      var newDivX = mousePosition.clientX - mouseToBorderBiasX - boxX;
-      var newDivY = mousePosition.clientY - mouseToBorderBiasY - boxY;
-
-      if (newDivX < 0) {
-        newDivX = 0;
-      }
-      if (newDivY < 0) {
-        newDivY = 0;
-      }
-
-      var boxWidth = boxDiv.offsetWidth;
-      var boxHeight = boxDiv.offsetHeight;
-      var moveDivWidth = moveDiv.offsetWidth;
-      var moveDivHeight = moveDiv.offsetHeight;
-      
-      if (newDivX > boxWidth - moveDivWidth) {
-        newDivX = boxWidth - moveDivWidth;
-      }
-      if (newDivY> boxHeight - moveDivHeight) {
-        newDivY = boxHeight - moveDivHeight;
-      }
-      
-      moveDiv.style.left = newDivX + 'px';
-      moveDiv.style.top = newDivY + 'px';
-
-      if (newDivX >= staticDiv.offsetLeft - moveDiv.offsetWidth
-        && newDivX <= staticDiv.offsetLeft + moveDiv.offsetHeight
-        && newDivY >= staticDiv.offsetTop - moveDiv.offsetHeight
-        && newDivY <= staticDiv.offsetTop + moveDiv.offsetHeight) {
-        NewColor = 'blue';
-      } else {
-        NewColor = 'yellow';
-      }
-      staticDiv.style.backgroundColor = NewColor;
+      var boxX = boxDiv.getBoundingClientRect().left;
+      var boxY = boxDiv.getBoundingClientRect().top;
+      var tempPositionX = mousePosition.clientX - mouseToBorderX - boxX;
+      var tempPositionY = mousePosition.clientY - mouseToBorderY - boxY;
+      var finalPositionX = decideBorderRange(tempPositionX, tempPositionY)[0];
+      var finalPositionY = decideBorderRange(tempPositionX, tempPositionY)[1];
+      moveDiv.style.left = finalPositionX + 'px';
+      moveDiv.style.top = finalPositionY + 'px';
+      changeColor(finalPositionX, finalPositionY);
     }
-  });
+  }
+
+  function changeColor(positionX, positionY) {
+    var staticDiv = document.getElementById('static');
+    if (positionX >= staticDiv.offsetLeft - moveDiv.offsetWidth
+      && positionX <= staticDiv.offsetLeft + staticDiv.offsetHeight
+      && positionY >= staticDiv.offsetTop - moveDiv.offsetHeight
+      && positionY <= staticDiv.offsetTop + staticDiv.offsetHeight) {
+      NewColor = 'blue';
+    } else {
+      NewColor = 'yellow';
+    }
+    staticDiv.style.backgroundColor = NewColor;
+  }
+
+  function decideBorderRange(positionX, positionY) {
+    var ouputX;
+    var ouputY;
+    var rightBorder = boxDiv.offsetWidth - moveDiv.offsetWidth;
+    var bottomBorder = boxDiv.offsetHeight - moveDiv.offsetHeight
+    if (positionX <= 0) {
+      ouputX = 0;
+    }
+    if (positionY <= 0) {
+      ouputY = 0;
+    }
+    if (positionX >= rightBorder) {
+      ouputX = rightBorder;
+    }
+    if (positionY >= bottomBorder) {
+      ouputY = bottomBorder;
+    }
+    if ((positionX > 0) && (positionX < rightBorder) && (positionY > 0) && (positionY < bottomBorder)) {
+      ouputX = positionX;
+      ouputY = positionY;
+    }
+    return [ouputX, ouputY];
+  }
 }
