@@ -7,5 +7,7 @@
 * Html+CSS: NASA Main Page: https://margotguo.github.io/tw-stage-1-project-1-2019-11-29-9-25-26-395/
 * DOM: Log-in Page: https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/02-DOM01/q1-log-in/login.html
 * DOM: Color Squares: https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/02-DOM01/q2-div-change-color/color-square.html
+* DOM: Shopping Cart: https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/03-DOM02-shopping-cart/shoppingCart.html
+
 ------
 * the whole page is : https://margotguo.github.io/TW-homework-repo/.
