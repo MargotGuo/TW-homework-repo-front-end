@@ -89,9 +89,7 @@ function setTable(product) {
   setTableHeader();
   setTableBody(product);
   setTableFooter(product);
-  
   setTableStyle();
-  console.log(document.getElementById("mainTable"))
 }
 
 function setTableHeader() {
@@ -316,6 +314,5 @@ function getProduct() {
   for (var index = 0; index < category; index++) {
     carProducts[index].sum = carProducts[index].count * carProducts[index].price;
   }
-  console.log(carProducts);
   return carProducts;
 }
