@@ -1,7 +1,5 @@
-window.onload = function () {
-  var check = document.getElementById('confirm');
-  check.addEventListener('click', checkPassword); 
-}
+var check = document.getElementById('confirm');
+check.addEventListener('click', checkPassword); 
 
 function checkPassword() {
   var account = document.getElementById('account');
@@ -16,6 +14,4 @@ function checkPassword() {
     hint.style.color = '#FA8072';
     password.value = '';
   }
-};
-
-
+}
