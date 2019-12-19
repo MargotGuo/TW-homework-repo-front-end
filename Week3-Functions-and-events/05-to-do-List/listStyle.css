@@ -31,31 +31,66 @@ body {
 }
 
 .input {
-  margin: 10px 0 40px 0;
+  margin: 10px 0 30px 0;
 }
 
-.text-box {
+#task {
   height: 22px;
   width: 80%;
   margin-right: 2%;
 }
 
-.add-button {
+#confirm-task {
   font-size: 15px;
   padding: 5px 15px;
   background-color: #fc999c;
   border: #ffffff 1px solid;
   border-radius: 5px;
   color: #ffffff;
-  cursor:pointer;
+  cursor: pointer;
+  outline: none;
 }
 
-.add-button:hover {
+#confirm-task:hover {
   background-color: #fdaeb0;
 }
 
-.list-detail {
+#list {
   margin: 10px 0;
+}
+
+.taskLine {
+  font-size: 15px;
+  line-height: 30px;
+  display: flex;
+}
+
+.newNumber {
+  width: 10px;
+}
+
+.newNumber-delete {
+  width: 10px;
+  color: #A4A4A4;
+  text-decoration: line-through;
+}
+
+.taskDetail {
+  flex: 1;
+  padding: 0 5px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+}
+
+.newText {
+  padding-left: 5px;
+}
+
+.newText-delete {
+  padding-left: 5px;
+  color: #A4A4A4;
+  text-decoration: line-through;
 }
 
 .bottom-box {
@@ -74,6 +109,7 @@ body {
   cursor:pointer;
 }
 
-.bottom-button:hover {
-  border: #ECECEC 1px solid;
+.bottom-button:hover, .bottom-button:focus {
+  outline: none;
+  border: #D6D6D6 1px solid;
 }
