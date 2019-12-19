@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium";
+}
+
+body {
+  background-color: #ECECEC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  width: 500px;
+  padding: 0 30px;
+  background-color: #ffffff;
+  margin: 50px;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 25px;
+  margin: 30px 0 10px 0;
+}
+
+.notation {
+  font-style: italic;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.input {
+  margin: 10px 0 40px 0;
+}
+
+.text-box {
+  height: 22px;
+  width: 80%;
+  margin-right: 2%;
+}
+
+.add-button {
+  font-size: 15px;
+  padding: 5px 15px;
+  background-color: #fc999c;
+  border: #ffffff 1px solid;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor:pointer;
+}
+
+.add-button:hover {
+  background-color: #fdaeb0;
+}
+
+.list-detail {
+  margin: 10px 0;
+}
+
+.bottom-box {
+  margin: 10px 120px;
+  display: flex;
+  justify-content: space-around
+}
+
+.bottom-button {
+  font-size: 15px;
+  padding: 5px 15px;
+  background-color: #ffffff;
+  border: #ffffff 1px solid;
+  border-radius: 5px;
+  color: #fc999c;
+  cursor:pointer;
+}
+
+.bottom-button:hover {
+  border: #ECECEC 1px solid;
+}
