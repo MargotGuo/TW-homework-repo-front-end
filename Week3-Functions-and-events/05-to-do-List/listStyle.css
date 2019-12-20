@@ -30,17 +30,17 @@ body {
   font-size: 15px;
 }
 
-.input {
+.input-box {
   margin: 10px 0 30px 0;
 }
 
-#task {
+.new-task {
   height: 22px;
   width: 80%;
   margin-right: 2%;
 }
 
-#confirm-task, #confirm-task-ban {
+.confirm-task {
   font-size: 15px;
   padding: 5px 15px;
   background-color: #fc999c;
@@ -51,42 +51,42 @@ body {
   outline: none;
 }
 
-#confirm-task:hover {
+.confirm-task:hover {
   background-color: #fdaeb0;
 }
 
-#list {
+.list {
   margin: 10px 0;
 }
 
-.task-line, .task-line-colored {
+.task-item, .task-item-colored {
   font-size: 15px;
   line-height: 30px;
   display: flex;
   align-items: center;
 }
 
-.task-line-colored {
+.task-item-colored {
   background: repeating-linear-gradient(to right, #ffffff, 15px, #f3ebeb, 1px, #f3ebeb);
 }
 
-.new-index {
+.index {
   width: 10px;
   margin-right: 10px;
 }
 
-.new-index-delete {
+.index-done {
   width: 10px;
   margin-right: 10px;
   color: #A4A4A4;
   text-decoration: line-through;
 }
 
-.new-text {
+.task-content {
   padding-left: 5px;
 }
 
-.new-text-delete {
+.task-content-done {
   padding-left: 5px;
   color: #A4A4A4;
   text-decoration: line-through;
