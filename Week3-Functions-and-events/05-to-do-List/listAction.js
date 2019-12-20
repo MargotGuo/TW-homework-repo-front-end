@@ -7,7 +7,6 @@ document.addEventListener("keypress", (event) => {
 });
 
 function mouseAction(event) {
-  console.log(event);
   if (event.target.id === "confirm-task") {
     return addNewTask();
   } else if (event.target.name === "complete-task") {
@@ -35,14 +34,14 @@ function displayTask() {
 function addNewTask() {
   var newIndex = document.getElementById("list").childNodes.length;
   var newTaskContent = document.getElementById("task").value;
-  if (newTaskContent) {
+  var maxIndex = localStorage.length + 1;
+ if (newTaskContent) {
     var newTaskDetail = {
-      "id": newIndex,
       "text": newTaskContent,
       "checked": false
     }
     var newString = JSON.stringify(newTaskDetail);
-    localStorage.setItem(newIndex, newString);
+    localStorage.setItem(maxIndex, newString);
     addNewLine(newIndex, newTaskDetail);
     document.getElementById("task").value = "";
   }
