@@ -31,7 +31,7 @@ window.onload = function () {
 
   function startGame() {
     // TODO: 写开始新游戏后发生的事
-    var intervalID = window.setInterval(molePeep, peepTime() + 1000);
+    var intervalID = window.setInterval(molePeep, 900);
   }
 
   function molePeep() {
