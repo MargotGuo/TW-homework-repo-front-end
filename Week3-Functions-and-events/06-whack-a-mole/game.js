@@ -36,6 +36,7 @@ window.onload = function () {
 
   function molePeep() {
     var index = peepHole();
+    lastHole = index;
     var targetHole = document.getElementsByClassName("hole")[index];
     var presentClass = targetHole.getAttribute("class");
     if (presentClass.split(" ").indexOf("up") === -1) {
@@ -55,6 +56,9 @@ window.onload = function () {
   function peepHole() {
     var totalHoleNumber = document.getElementsByClassName("hole").length;
     var holeIndex = Math.floor(Math.random() * totalHoleNumber);
+    if (holeIndex === lastHole) {
+      return peepHole();
+    }
     return holeIndex;
   }
 
