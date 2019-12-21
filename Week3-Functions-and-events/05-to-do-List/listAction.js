@@ -1,7 +1,8 @@
 displayAll();
+var pageStatus = "all"; // "all" | "active" | "complete"
 document.addEventListener("click", mouseAction);
 document.addEventListener("keypress", (event) => {
-  if (event.which === 13 && document.getElementById("confirm-task")) { 
+  if (event.which === 13) { 
     return addNewTask();
   }
 });
@@ -23,6 +24,7 @@ function mouseAction(event) {
 }
 
 function displayAll() {
+  pageStatus = "all";
   clearNode();
   var newIndex = 0;
   for (var index = 1, len = localStorage.length; index <= len; index++) {
@@ -32,12 +34,10 @@ function displayAll() {
       displayNewTask(newIndex, localTaskDetail);
     };
   }
-  if (document.getElementById("confirm-task-ban")) {
-    document.getElementById("confirm-task-ban").setAttribute("id", "confirm-task");
-  }
 }
 
 function displayActive() {
+  pageStatus = "active";
   clearNode();
   var newIndex = 0;
   for (var index = 1, len = localStorage.length; index <= len; index++) {
@@ -47,12 +47,10 @@ function displayActive() {
       displayNewTask(newIndex, localTaskDetail);
     }
   }
-  if (document.getElementById("confirm-task-ban")) {
-    document.getElementById("confirm-task-ban").setAttribute("id", "confirm-task");
-  }
 }
 
 function displayComplete() {
+  pageStatus = "complete"
   clearNode();
   var newIndex = 0;
   for (var index = 1, len = localStorage.length; index <= len; index++) {
@@ -62,12 +60,10 @@ function displayComplete() {
       displayNewTask(newIndex, localTaskDetail);
     }
   }
-  if (document.getElementById("confirm-task")) {
-    document.getElementById("confirm-task").setAttribute("id", "confirm-task-ban");
-  }
 }
 
 function addNewTask() {
+  if (pageStatus !== "complete")
   var newTaskContent = document.getElementById("new-task").value;
   if (newTaskContent) {
     var newTaskIndex = localStorage.length + 1;
@@ -130,13 +126,30 @@ function markAsDone(event) {
 }
 
 function deleteTask(event) {
+  var userMessage = confirm("是否删除该 TODO？");
+  if (userMessage) {
+    confirmDelete(event);
+  }
+}
+
+function confirmDelete(event) {
   var targetIndex = event.target.parentNode.id;
   var targetStorage = JSON.parse(localStorage.getItem(targetIndex));
-  var targetList = document.getElementById(targetIndex);
   targetStorage.status = false;
   targetString = JSON.stringify(targetStorage);
   localStorage.setItem(targetIndex, targetString);
-  document.getElementById("list").removeChild(targetList);
+  switch (pageStatus) {
+    case "all":
+      displayAll();
+      break;
+    case "active":
+      displayActive();
+      break
+    case "complete":
+      displayComplete();
+    default:
+      break;
+  }
 }
 
 function clearNode() {
