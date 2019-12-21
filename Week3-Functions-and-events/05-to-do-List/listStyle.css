@@ -59,14 +59,15 @@ body {
   margin: 10px 0;
 }
 
-.task-item, .task-item-colored {
+.task-item {
   font-size: 15px;
   line-height: 30px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
-.task-item-colored {
+.colored {
   background: repeating-linear-gradient(to right, #ffffff, 15px, #f3ebeb, 1px, #f3ebeb);
 }
 
@@ -92,6 +93,19 @@ body {
   text-decoration: line-through;
 }
 
+.close {
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  opacity: 0.5;
+  display: none;
+  cursor: pointer;
+}
+
+.task-item:hover .close {
+  display: inline;
+}
+
 .bottom-box {
   margin: 10px 120px;
   display: flex;
@@ -105,7 +119,7 @@ body {
   border: #ffffff 1px solid;
   border-radius: 5px;
   color: #fc999c;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .bottom-button:hover, .bottom-button:focus {
