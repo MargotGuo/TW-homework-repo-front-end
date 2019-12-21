@@ -50,7 +50,7 @@ h1 {
 
 .hole:after {
   display: block;
-  background: url(dirt.svg) bottom center no-repeat;
+  background: url("image/dirt.svg") bottom center no-repeat;
   background-size: contain;
   content: '';
   width: 100%;
@@ -61,7 +61,7 @@ h1 {
 }
 
 .mole {
-  background: url('mole.svg') bottom center no-repeat;
+  background: url("image/mole.svg") bottom center no-repeat;
   background-size: 60%;
   position: absolute;
   top: 100%;
