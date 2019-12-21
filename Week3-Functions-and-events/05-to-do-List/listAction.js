@@ -3,23 +3,23 @@ var pageStatus = "all"; // "all" | "active" | "complete"
 document.addEventListener("click", mouseAction);
 document.addEventListener("keypress", (event) => {
   if (event.which === 13) { 
-    return addNewTask();
+    addNewTask();
   }
 });
 
 function mouseAction(event) {
   if (event.target.id === "confirm-task") {
-    return addNewTask();
+    addNewTask();
   } else if (event.target.name === "task-done") {
-    return markAsDone(event);
+    markAsDone(event);
   } else if (event.target.id === "all") {
-    return displayAll();
+    displayAll();
   } else if (event.target.id === "active") {
-    return displayActive();
+    displayActive();
   } else if (event.target.id === "complete") {
-    return displayComplete();
+    displayComplete();
   } else if (event.target.name === "close") {
-    return deleteTask(event);
+    deleteTask(event);
   }
 }
 

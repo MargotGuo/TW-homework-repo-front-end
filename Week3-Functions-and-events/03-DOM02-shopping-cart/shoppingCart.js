@@ -5,11 +5,11 @@ document.addEventListener("click", clickEvent);
 function clickEvent(event) {
   var targetId = event.target.id;
   if (event.target.id === "choose-all") {
-    return chooseAll();
+    chooseAll();
   } else if (event.target.name === "product-check") {
-    return chooseProduct(targetId);
+    chooseProduct(targetId);
   } else if (event.target.name === "operation") {
-    return changeProductNumber(targetId);
+    changeProductNumber(targetId);
   }
 }
 
