@@ -35,37 +35,42 @@ function move(mouseEvent) {
 
 function changeColor(positionX, positionY) {
   var staticDiv = document.getElementById('static');
-  if (positionX >= staticDiv.offsetLeft - moveDiv.offsetWidth
-    && positionX <= staticDiv.offsetLeft + staticDiv.offsetHeight
-    && positionY >= staticDiv.offsetTop - moveDiv.offsetHeight
-    && positionY <= staticDiv.offsetTop + staticDiv.offsetHeight) {
-    NewColor = 'blue';
+  var left = staticDiv.offsetLeft - moveDiv.offsetWidth;
+  var right = staticDiv.offsetLeft + staticDiv.offsetWidth;
+  var top = staticDiv.offsetTop - moveDiv.offsetHeight;
+  var bottom = staticDiv.offsetTop + staticDiv.offsetHeight;
+  if (positionX >= left && positionX <= right && positionY >= top && positionY <= bottom) {
+    var newColor = 'blue';
   } else {
-    NewColor = 'yellow';
+    var newColor = 'yellow';
   }
-  staticDiv.style.backgroundColor = NewColor;
+  staticDiv.style.backgroundColor = newColor;
 }
 
 function decideBorderRange(positionX, positionY) {
   var ouputX;
   var ouputY;
   var rightBorder = boxDiv.offsetWidth - moveDiv.offsetWidth;
-  var bottomBorder = boxDiv.offsetHeight - moveDiv.offsetHeight
-  if (positionX <= 0) {
+  var bottomBorder = boxDiv.offsetHeight - moveDiv.offsetHeight;
+
+  if (positionX < 0) {
     ouputX = 0;
-  }
-  if (positionY <= 0) {
-    ouputY = 0;
-  }
-  if (positionX >= rightBorder) {
+    decideY(positionY);
+  } else if (positionX > rightBorder) {
     ouputX = rightBorder;
-  }
-  if (positionY >= bottomBorder) {
-    ouputY = bottomBorder;
-  }
-  if ((positionX > 0) && (positionX < rightBorder) && (positionY > 0) && (positionY < bottomBorder)) {
+    decideY(positionY);
+  } else {
     ouputX = positionX;
-    ouputY = positionY;
+    decideY(positionY);
+  }
+  function decideY(positionY) {
+    if (positionY < 0) {
+      ouputY = 0;
+    } else if (positionY > bottomBorder) {
+      ouputY = bottomBorder;
+    } else {
+      ouputY = positionY;
+    }
   }
   return [ouputX, ouputY];
 }

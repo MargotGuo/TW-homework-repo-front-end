@@ -15,10 +15,10 @@ h1 {
 
 #container {
   position: relative;
+  margin-bottom: 50px;
   height: 800px;
   width: 1000px;
   background-color: #EEEEEE;
-  margin-bottom: 50px;
 }
 
 #static {
