@@ -1,15 +1,15 @@
-var totalProduct = getProduct();
+var allProduct = getProduct();
 setTable();
 document.addEventListener("click", clickEvent);
 
 function clickEvent(event) {
   var targetId = event.target.id;
-  if (event.target.id === "choose-all") {
+  if (targetId === "choose-all") {
     chooseAll();
   } else if (event.target.name === "product-check") {
     chooseProduct(targetId);
   } else if (event.target.name === "operation") {
-    changeProductNumber(targetId);
+    changeCount(targetId);
   }
 }
 
@@ -74,10 +74,10 @@ function setTable() {
 }
 
 function setTableHeader(shoppingCart) {
-  var rowHeader = document.createElement("tr");
-  shoppingCart.appendChild(rowHeader);
-  rowHeader.setAttribute("class", "row-header");
-  rowHeader.innerHTML = 
+  var headerRow = document.createElement("tr");
+  shoppingCart.appendChild(headerRow);
+  headerRow.setAttribute("class", "row-header");
+  headerRow.innerHTML = 
     "<th class='row-header-cell'>选择</th>" +
     "<th class='row-header-cell'>商品名称</th>" +
     "<th class='row-header-cell'>商品单价(￥)</th>" +
@@ -86,29 +86,39 @@ function setTableHeader(shoppingCart) {
 }
 
 function setTableBody(shoppingCart) {
-  totalProduct.map((product) => {
-    var rowBody = document.createElement("tr");
-    shoppingCart.appendChild(rowBody);
-    rowBody.setAttribute("id", "row" + product.id)
-    rowBody.innerHTML = 
-      "<td class='row-body-cell'><input name='product-check' id='checkbox"+ product.id + "' type='checkbox'></td>" +
-      "<td class='row-body-cell'>" + product.name + "</td>" +
-      "<td class='row-body-cell'>" + product.price + "</td>" +
+  allProduct.map((product) => {
+    var newBodyRow = document.createElement("tr");
+    shoppingCart.appendChild(newBodyRow);
+    newBodyRow.setAttribute("id", "row" + product.id);
+    newBodyRow.innerHTML = 
+      "<td class='row-body-cell'><input name='product-check' type='checkbox'></td>" +
+      "<td class='row-body-cell'></td>" +
+      "<td class='row-body-cell'></td>" +
       "<td class='row-body-cell'>" + 
-      "<button id='minus" + product.id + "' class='button-cell' name='operation'>-</button>" +
-      "<span id='count" + product.id + "'>" + product.count + "</span>" +
-      "<button id='add" + product.id + "' class='button-cell' name='operation'>+</button>" + "</td>" +
-      "<td class='row-body-cell' id='sum" + product.id + "'>" + product.sum + "</td>";
-    if (product.checked === true) {
-      document.getElementById("checkbox" + product.id).setAttribute("checked", true);
+        "<button class='button-cell' name='operation'>-</button>" +
+        "<span></span>" +
+        "<button class='button-cell' name='operation'>+</button>" + 
+      "</td>" +
+      "<td class='row-body-cell'></td>";
+    if (product.checked) {
+      newBodyRow.childNodes[0].childNodes[0].setAttribute("checked", true);
     }
+    newBodyRow.childNodes[0].childNodes[0].setAttribute("id", "checkbox" + product.id);
+    newBodyRow.childNodes[1].innerHTML = product.name;
+    newBodyRow.childNodes[2].innerHTML = product.price;
+    newBodyRow.childNodes[3].childNodes[0].setAttribute("id", "minus" + product.id);
+    newBodyRow.childNodes[3].childNodes[1].innerHTML = product.count;
+    newBodyRow.childNodes[3].childNodes[1].setAttribute("id", "count" + product.id);
+    newBodyRow.childNodes[3].childNodes[2].setAttribute("id", "add" + product.id);
+    newBodyRow.childNodes[4].innerHTML = product.sum;
+    newBodyRow.childNodes[4].setAttribute("id", "sum" + product.id);
   });
 }
 
 function setTableFooter(shoppingCart) {
-  var rowFooter = document.createElement("tr");
-  shoppingCart.appendChild(rowFooter);
-  rowFooter.innerHTML =
+  var footerRow = document.createElement("tr");
+  shoppingCart.appendChild(footerRow);
+  footerRow.innerHTML =
     "<td class='row-body-cell'>全选&nbsp;&nbsp;<input id='choose-all' type='checkbox'></td>" +
     "<td id='summary' class='row-body-cell' colspan='4'></td>";
   getSummary();
@@ -117,52 +127,65 @@ function setTableFooter(shoppingCart) {
 function getSummary() {
   var sumCount = 0;
   var sumPrice = 0;
-  totalProduct.map((product) => {
+  allProduct.map((product) => {
     if (product.checked === true) {
       sumCount += product.count;
       sumPrice += product.sum;
     }
   });
-  var summarySentence = document.getElementById("summary")
-  summarySentence.innerHTML = "共计" + sumCount + "件商品，" + sumPrice + "￥";
+  var summary = document.getElementById("summary");
+  summary.innerHTML = "共计" + sumCount + "件商品，" + sumPrice + "￥";
 }
 
-function chooseProduct(type) {
-  var productId = type.charAt(type.length - 1);
-  var presentStatus = totalProduct[productId - 1].checked;
-  if (presentStatus) {
-    totalProduct[productId - 1].checked = false;
+function chooseProduct(targetId) {
+  var productId = targetId.charAt(targetId.length - 1);
+  var productIndex = productId - 1;
+  var productStatus = allProduct[productIndex].checked;
+  if (productStatus) {
+    allProduct[productIndex].checked = false;
   } else {
-    totalProduct[productId - 1].checked = true;
+    allProduct[productIndex].checked = true;
   }
   getSummary();
 }
 
-function changeProductNumber(type) {
-  var productId = type.charAt(type.length - 1);
-  var operationType = type.slice(0, type.length - 1);
-  if (operationType === "minus") {
-    totalProduct[productId - 1].count--;
-  } else if (operationType === "add") {
-    totalProduct[productId - 1].count++
+function changeCount(targetId) {
+  var productId = targetId.charAt(targetId.length - 1);
+  var productIndex = productId - 1;
+  var operator = targetId.slice(0, targetId.length - 1);
+  // data action
+  if (operator === "minus") {
+    allProduct[productIndex].count--;
+  } else if (operator === "add") {
+    allProduct[productIndex].count++;
   }
-  totalProduct[productId - 1].sum = totalProduct[productId - 1].count * totalProduct[productId - 1].price;
-  if (totalProduct[productId - 1].count === 0) {
+  allProduct[productIndex].sum = allProduct[productIndex].count * allProduct[productIndex].price;
+  // page action
+  if (allProduct[productIndex].count === 0) {
     var deletedProduct = document.getElementById("row" + productId);
     document.getElementById("main-table").removeChild(deletedProduct);
   } else {
     var productCount = document.getElementById("count" + productId);
-    productCount.innerHTML = totalProduct[productId - 1].count;
+    productCount.innerHTML = allProduct[productIndex].count;
     var productSumPrice = document.getElementById("sum" + productId);
-    productSumPrice.innerHTML = totalProduct[productId - 1].sum;
+    productSumPrice.innerHTML = allProduct[productIndex].sum;
   }
   getSummary();
 }
 
 function chooseAll() {
+  // data action
   var chooseAllCheckbox = document.getElementById("choose-all");
-  var productCheckbox = document.getElementsByName('product-check');
   var chooseAllStatus = chooseAllCheckbox.checked;
+  allProduct.map((product) => {
+    if (chooseAllStatus) {
+      product.checked = true;
+    } else {
+      product.checked = false;
+    }
+  });
+  // page action
+  var productCheckbox = document.getElementsByName('product-check');
   for (var index = 0, len = productCheckbox.length; index < len; index++) {
     if (chooseAllStatus) {
       productCheckbox[index].checked = true;
@@ -170,12 +193,5 @@ function chooseAll() {
       productCheckbox[index].checked = false;
     }
   }
-  totalProduct.map((product) => {
-    if (chooseAllStatus) {
-      product.checked = true;
-    } else {
-      product.checked = false;
-    }
-  });
   getSummary();
 }
