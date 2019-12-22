@@ -128,7 +128,7 @@ function getSummary() {
   var sumCount = 0;
   var sumPrice = 0;
   allProduct.map((product) => {
-    if (product.checked === true) {
+    if (product.checked) {
       sumCount += product.count;
       sumPrice += product.sum;
     }
