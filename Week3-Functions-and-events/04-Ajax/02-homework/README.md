@@ -9,44 +9,31 @@
 7. `onComplete`
 8. `onException`
 
-# Q2 - 编程实现，创建一个名为 ajax 的 XHR 对象，其示例用法如下： 
+# Q2 - 编程实现，创建一个名为 ajax 的 XHR 对象： 
 
 ```javascript
- function myCallback(xhr) { 
-   alert(xhr.responseText); 
- }
- ajax.request(“somefile.txt”, ”get”, myCallback);
- ajax.request(“script.php”, ”post”, myCallback, ”first=John&last=Smith”);
+//QAQ
 ```
-
-编程编程编程编程
 
 # Q3 - 造成跨域的原因有哪些？
 
-原因原因原因原因
+* **浏览器的同源策略**限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。
+  * 注1：如果两个页面的**协议**，**端口**和**主机**都相同，则两个页面具有**相同的源**）
+  * 注2：同源策略是一个用于**隔离潜在恶意文件**的重要**安全机制**
+* 在浏览器中，`<script>`、`<img>`、`<iframe>`、`<link>`等标签都可以加载跨域资源，而不受同源限制，但浏览器会限制脚本中发起的**跨域请求**。比如，使用`XMLHttpRequest` 对象和Fetch发起 HTTP 请求就必须遵守同源策略。Web 应用程序通过 XMLHttpRequest 对象或Fetch能且只能向同域名的资源发起 HTTP 请求，而不能向任何其它域名发起请求。
+* 不允许跨域访问并非是浏览器限制了发起跨站请求，而是**跨站请求可以正常发起**，但是**返回结果被浏览器拦截了**。
 
 # Q4 - 有哪些办法可以解决跨域？
 
-办法办法办法办法
+1. 通过`jsonp`跨域
+2. 通过修改`document.domain`来跨子域
+3. 使用`window.name`来进行跨域
+4. 使用HTML5中新引进的`window.postMessage`方法来跨域传送数据
+5. 使用代理服务器。使用代理方式跨域更加直接，因为同源限制是浏览器实现的。如果请求不是从浏览器发起的，就不存在跨域问题了。
 
 # Q5 -编程实现：有一个方法，可以避免每次请求重复去写创建 XHR 的整个过程，请求方法现只考虑 `POST` 和 `GET`，要求默认请求方法是 `GET`，如下：
 
-~~~javascript
-/**
-options = {
-  url: "",
-  method: "",
-  headers: {},   // 传给
-  data: "",     // 传给服务器的参数
-  success: function(result) {},  // 请求成功后调用此方法
-  fail: function(error) {}    // 请求失败或出错后调用此方法
-}
-**/
-var request = function(options) {
-   // code this here
-}
-    ```
-~~~
-
-编程编程编程编程
+```javascript
+//QAQ
+```
 
