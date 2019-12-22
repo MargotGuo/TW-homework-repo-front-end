@@ -32,7 +32,7 @@ function displayAll() {
     if (localTaskDetail.status) {
       newIndex++;
       displayNewTask(newIndex, localTaskDetail);
-    };
+    }
   }
 }
 
@@ -50,7 +50,7 @@ function displayActive() {
 }
 
 function displayComplete() {
-  pageStatus = "complete"
+  pageStatus = "complete";
   clearNode();
   var newIndex = 0;
   for (var index = 1, len = localStorage.length; index <= len; index++) {
@@ -63,8 +63,9 @@ function displayComplete() {
 }
 
 function addNewTask() {
-  if (pageStatus !== "complete")
-  var newTaskContent = document.getElementById("new-task").value;
+  if (pageStatus !== "complete") {
+    var newTaskContent = document.getElementById("new-task").value;
+  }
   if (newTaskContent) {
     var newTaskIndex = localStorage.length + 1;
     var newTaskDetail = {
@@ -72,12 +73,12 @@ function addNewTask() {
       task: newTaskContent,
       checked: false,
       status: true
-    }
+    };
     var newTaskString = JSON.stringify(newTaskDetail);
     localStorage.setItem(newTaskIndex, newTaskString);
     var showIndex = document.getElementById("list").childNodes.length;
     displayNewTask(showIndex, newTaskDetail);
-    document.getElementById("new-task").value = ""
+    document.getElementById("new-task").value = "";
   }
 }
 
@@ -90,6 +91,8 @@ function displayNewTask(index, taskStorage) {
   } else {
     task.setAttribute("class", "task-item ` colored");
   }
+  var indexClass;
+  var contentClass;
   if (taskStorage.checked) {
     indexClass = "index-done";
     contentClass = "task-content-done";
@@ -101,7 +104,7 @@ function displayNewTask(index, taskStorage) {
     "<p class='" + indexClass + "'>" + index + "." + "</p>" +
     "<input type='checkbox' name='task-done'/>" + 
     "<p class='" + contentClass + "'>" + taskStorage.task + "</p>" +
-    "<img name='close' class='close' src='icon/close.svg'>"
+    "<img name='close' class='close' src='icon/close.svg'>";
   if (taskStorage.checked) {
     task.childNodes[1].setAttribute("checked", true);
   }
@@ -121,7 +124,7 @@ function markAsDone(event) {
     targetList.childNodes[0].setAttribute("class", "index-done");
     targetList.childNodes[2].setAttribute("class", "task-content-done");
   }
-  targetString = JSON.stringify(targetStorage);
+  var targetString = JSON.stringify(targetStorage);
   localStorage.setItem(targetIndex, targetString);
 }
 
@@ -136,19 +139,20 @@ function confirmDelete(event) {
   var targetIndex = event.target.parentNode.id;
   var targetStorage = JSON.parse(localStorage.getItem(targetIndex));
   targetStorage.status = false;
-  targetString = JSON.stringify(targetStorage);
+  var targetString = JSON.stringify(targetStorage);
   localStorage.setItem(targetIndex, targetString);
   switch (pageStatus) {
-    case "all":
-      displayAll();
-      break;
-    case "active":
-      displayActive();
-      break
-    case "complete":
-      displayComplete();
-    default:
-      break;
+  case "all":
+    displayAll();
+    break;
+  case "active":
+    displayActive();
+    break;
+  case "complete":
+    displayComplete();
+    break;
+  default:
+    break;
   }
 }
 

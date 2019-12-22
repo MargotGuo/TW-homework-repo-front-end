@@ -90,28 +90,19 @@ function setTableBody(shoppingCart) {
     var newBodyRow = document.createElement("tr");
     shoppingCart.appendChild(newBodyRow);
     newBodyRow.setAttribute("id", "row" + product.id);
-    newBodyRow.innerHTML = 
-      "<td class='row-body-cell'><input name='product-check' type='checkbox'></td>" +
-      "<td class='row-body-cell'></td>" +
-      "<td class='row-body-cell'></td>" +
-      "<td class='row-body-cell'>" + 
-        "<button class='button-cell' name='operation'>-</button>" +
-        "<span></span>" +
-        "<button class='button-cell' name='operation'>+</button>" + 
-      "</td>" +
-      "<td class='row-body-cell'></td>";
+    newBodyRow.innerHTML = `
+    <td class='row-body-cell'><input name='product-check' id='checkbox${product.id}' type='checkbox'></td>
+    <td class='row-body-cell'>${product.name}</td>
+    <td class='row-body-cell'>${product.price}</td>
+    <td class='row-body-cell'> 
+      <button class='button-cell' name='operation' id='minus${product.id}'>-</button>
+      <span id='count${product.id}'>${product.count}</span>
+      <button class='button-cell' name='operation' id='add${product.id}'>+</button> 
+    </td>
+    <td class='row-body-cell' id='sum${product.id}'>${product.sum}</td>`;
     if (product.checked) {
-      newBodyRow.childNodes[0].childNodes[0].setAttribute("checked", true);
+      document.getElementById("checkbox" + product.id).setAttribute("checked", true);
     }
-    newBodyRow.childNodes[0].childNodes[0].setAttribute("id", "checkbox" + product.id);
-    newBodyRow.childNodes[1].innerHTML = product.name;
-    newBodyRow.childNodes[2].innerHTML = product.price;
-    newBodyRow.childNodes[3].childNodes[0].setAttribute("id", "minus" + product.id);
-    newBodyRow.childNodes[3].childNodes[1].innerHTML = product.count;
-    newBodyRow.childNodes[3].childNodes[1].setAttribute("id", "count" + product.id);
-    newBodyRow.childNodes[3].childNodes[2].setAttribute("id", "add" + product.id);
-    newBodyRow.childNodes[4].innerHTML = product.sum;
-    newBodyRow.childNodes[4].setAttribute("id", "sum" + product.id);
   });
 }
 
@@ -121,7 +112,7 @@ function setTableFooter(shoppingCart) {
   footerRow.innerHTML =
     "<td class='row-body-cell'>全选&nbsp;&nbsp;<input id='choose-all' type='checkbox'></td>" +
     "<td id='summary' class='row-body-cell' colspan='4'></td>";
-  getSummary();
+  sumSentenceChange();
 }
 
 function getSummary() {
@@ -133,8 +124,13 @@ function getSummary() {
       sumPrice += product.sum;
     }
   });
+  return [sumCount, sumPrice];
+}
+
+function sumSentenceChange() {
+  var result = getSummary();
   var summary = document.getElementById("summary");
-  summary.innerHTML = "共计" + sumCount + "件商品，" + sumPrice + "￥";
+  summary.innerHTML = "共计" + result[0] + "件商品，" + result[1] + "￥";
 }
 
 function chooseProduct(targetId) {
@@ -146,7 +142,7 @@ function chooseProduct(targetId) {
   } else {
     allProduct[productIndex].checked = true;
   }
-  getSummary();
+  sumSentenceChange();
 }
 
 function changeCount(targetId) {
@@ -170,7 +166,7 @@ function changeCount(targetId) {
     var productSumPrice = document.getElementById("sum" + productId);
     productSumPrice.innerHTML = allProduct[productIndex].sum;
   }
-  getSummary();
+  sumSentenceChange();
 }
 
 function chooseAll() {
@@ -185,7 +181,7 @@ function chooseAll() {
     }
   });
   // page action
-  var productCheckbox = document.getElementsByName('product-check');
+  var productCheckbox = document.getElementsByName("product-check");
   for (var index = 0, len = productCheckbox.length; index < len; index++) {
     if (chooseAllStatus) {
       productCheckbox[index].checked = true;
@@ -193,5 +189,5 @@ function chooseAll() {
       productCheckbox[index].checked = false;
     }
   }
-  getSummary();
+  sumSentenceChange();
 }
