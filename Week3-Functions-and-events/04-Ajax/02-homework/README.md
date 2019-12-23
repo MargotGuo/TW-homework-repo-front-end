@@ -113,7 +113,7 @@ var request = function(options) {
   xhr.send();
 
   xhr.onload = function () {
-    if (xhr.status != 200) {
+    if (xhr.status !== 200) {
       options.err(xhr);
     } else {
       options.success(xhr);
