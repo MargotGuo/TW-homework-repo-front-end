@@ -12,7 +12,61 @@
 # Q2 - 编程实现，创建一个名为 ajax 的 XHR 对象： 
 
 ```javascript
-//QAQ
+let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+let ajax = new XMLHttpRequest();
+
+ajax.request = function request() {
+  var paraNum = arguments.length;
+  var url = arguments[0];
+  var callbackFunc = arguments[2];
+  var operate;
+  if (paraNum === 4) {
+    var sendInfo = arguments[3];
+    operate = "POST";
+    requestPost(operate, url, callbackFunc, sendInfo);
+  } else if (paraNum === 3) {
+    operate = "GET";
+    requestGet(operate, url, callbackFunc);
+  }
+};
+
+function requestGet(operate, url, callbackFunc) {
+  ajax.open(operate, url);
+  ajax.send();
+  ajax.onload = function () {
+    if (ajax.status !== 200) {
+      console.log(`Error ${ajax.status}: ${ajax.statusText}`);
+    } else {
+      callbackFunc(ajax);
+    }
+  };
+  ajax.onerror = function () {
+    console.log("Request failed");
+  };
+}
+
+function requestPost(operate, url, callbackFunc, sendInfo) {  //这个感觉没法测? 没法测我也不知道有没有写对QAQ
+  ajax.open(operate, url);
+  ajax.send(sendInfo);
+  ajax.onload = function () {
+    if (ajax.status !== 200) {
+      console.log(`Error ${ajax.status}: ${ajax.statusText}`);
+    } else {
+      callbackFunc(ajax);
+    }
+  };
+  ajax.onerror = function () {
+    console.log("Request failed");
+  };
+}
+
+function myCallback(xhr) { 
+  console.log(xhr.responseText); 
+}
+
+ajax.request("https://zhuanlan.zhihu.com/api/columns/biancheng/articles", "get", myCallback);
+// ajax.request("script.php", "post", myCallback, "first=John&last=Smith");
 ```
 
 # Q3 - 造成跨域的原因有哪些？
@@ -34,6 +88,43 @@
 # Q5 -编程实现：有一个方法，可以避免每次请求重复去写创建 XHR 的整个过程，请求方法现只考虑 `POST` 和 `GET`，要求默认请求方法是 `GET`，如下：
 
 ```javascript
-//QAQ
+var options = {
+  url: "https://zhuanlan.zhihu.com/api/columns/biancheng/articles",
+  method: "GET",
+  headers: {},
+  data: "",
+  err: function(xhr) {
+    console.log(`Error ${xhr.status}: ${xhr.statusText}`);
+  },
+  success: function(xhr) {
+    console.log(`Done, got ${JSON.stringify(xhr.responseText)}`);
+  },
+  fail: function() {
+    console.log("Request failed");
+  }
+};
+
+
+var request = function(options) {
+  let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+  let xhr = new XMLHttpRequest();
+
+  xhr.open(options.method, options.url);
+  xhr.send();
+
+  xhr.onload = function () {
+    if (xhr.status != 200) {
+      options.err(xhr);
+    } else {
+      options.success(xhr);
+    }
+  };
+
+  xhr.onerror = function () {
+    options.fail();
+  };
+};
+
+request(options);
 ```
 
