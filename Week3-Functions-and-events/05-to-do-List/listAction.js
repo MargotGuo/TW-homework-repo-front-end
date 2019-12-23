@@ -141,18 +141,12 @@ function confirmDelete(event) {
   targetStorage.status = false;
   var targetString = JSON.stringify(targetStorage);
   localStorage.setItem(targetIndex, targetString);
-  switch (pageStatus) {
-  case "all":
+  if (pageStatus === "all") {
     displayAll();
-    break;
-  case "active":
+  } else if (pageStatus === "active") {
     displayActive();
-    break;
-  case "complete":
+  } else if (pageStatus === "complete") {
     displayComplete();
-    break;
-  default:
-    break;
   }
 }
 

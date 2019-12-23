@@ -65,24 +65,9 @@ function getProduct() {
 }
 
 function setTable() {
-  var shoppingCart = document.createElement("table");
-  document.getElementById("mainPage").appendChild(shoppingCart);
-  shoppingCart.setAttribute("id", "main-table");
-  setTableHeader(shoppingCart);
+  var shoppingCart = document.getElementById("main-table");
   setTableBody(shoppingCart);
   setTableFooter(shoppingCart);
-}
-
-function setTableHeader(shoppingCart) {
-  var headerRow = document.createElement("tr");
-  shoppingCart.appendChild(headerRow);
-  headerRow.setAttribute("class", "row-header");
-  headerRow.innerHTML = 
-    "<th class='row-header-cell'>选择</th>" +
-    "<th class='row-header-cell'>商品名称</th>" +
-    "<th class='row-header-cell'>商品单价(￥)</th>" +
-    "<th class='row-header-cell'>商品数量</th>" +
-    "<th class='row-header-cell'>总价(￥)</th>";
 }
 
 function setTableBody(shoppingCart) {
@@ -112,10 +97,10 @@ function setTableFooter(shoppingCart) {
   footerRow.innerHTML =
     "<td class='row-body-cell'>全选&nbsp;&nbsp;<input id='choose-all' type='checkbox'></td>" +
     "<td id='summary' class='row-body-cell' colspan='4'></td>";
-  sumSentenceChange();
+  setNewSummary();
 }
 
-function getSummary() {
+function getSummaryInfo() {
   var sumCount = 0;
   var sumPrice = 0;
   allProduct.map((product) => {
@@ -127,14 +112,14 @@ function getSummary() {
   return [sumCount, sumPrice];
 }
 
-function sumSentenceChange() {
-  var result = getSummary();
+function setNewSummary() {
+  var result = getSummaryInfo();
   var summary = document.getElementById("summary");
   summary.innerHTML = "共计" + result[0] + "件商品，" + result[1] + "￥";
 }
 
 function chooseProduct(targetId) {
-  var productId = targetId.charAt(targetId.length - 1);
+  var productId = parseInt(targetId.charAt(targetId.length - 1));
   var productIndex = productId - 1;
   var productStatus = allProduct[productIndex].checked;
   if (productStatus) {
@@ -142,8 +127,9 @@ function chooseProduct(targetId) {
   } else {
     allProduct[productIndex].checked = true;
   }
-  sumSentenceChange();
+  setNewSummary();
 }
+
 
 function changeCount(targetId) {
   var productId = targetId.charAt(targetId.length - 1);
@@ -166,7 +152,7 @@ function changeCount(targetId) {
     var productSumPrice = document.getElementById("sum" + productId);
     productSumPrice.innerHTML = allProduct[productIndex].sum;
   }
-  sumSentenceChange();
+  setNewSummary();
 }
 
 function chooseAll() {
@@ -189,5 +175,5 @@ function chooseAll() {
       productCheckbox[index].checked = false;
     }
   }
-  sumSentenceChange();
+  setNewSummary();
 }
