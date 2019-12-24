@@ -32,11 +32,11 @@ function requestGet(operate, url, callbackFunc) {
   };
 }
 
-function requestPost(operate, url, callbackFunc, sendInfo) {  //这个感觉没法测? 没法测我也不知道有没有写对QAQ
+function requestPost(operate, url, callbackFunc, sendInfo) {
   ajax.open(operate, url);
   ajax.send(sendInfo);
   ajax.onload = function () {
-    if (ajax.status !== 200) {
+    if (ajax.status !== 201) {
       console.log(`Error ${ajax.status}: ${ajax.statusText}`);
     } else {
       callbackFunc(ajax);
@@ -51,5 +51,13 @@ function myCallback(xhr) {
   console.log(xhr.responseText); 
 }
 
-ajax.request("https://zhuanlan.zhihu.com/api/columns/biancheng/articles", "get", myCallback);
-// ajax.request("script.php", "post", myCallback, "first=John&last=Smith");
+/*-----------测试GET方法--------------*/
+// ajax.request("https://zhuanlan.zhihu.com/api/columns/biancheng/articles", "get", myCallback);
+
+/*-----------测试POST方法--------------*/
+var postInfo = JSON.stringify({
+  title: "foo",
+  body: "bar",
+  userId: 1
+});
+ajax.request("https://jsonplaceholder.typicode.com/posts", "post", myCallback, postInfo);
