@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UML_testing</title> 
+</head>
+
+<body>
+  <audio autoplay="autoplay" loop="loop" controls="controls">
+    <source src="audio/backgroundMusic.mp3">
+    Your browser does not support the audio tag.
+  </audio>
+  <h1>统一建模语言能力测试</h1>
+  <table>
+    <tr>
+      <td>考试科目：</td>
+      <td>统一建模语言</td>
+      <td>时间：</td>
+      <td>100分钟</td>
+      <td>得分：</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>班级：</td>
+      <td>
+        <form method="post" action="save.php" style="display: inline;">
+          <input type="text" name="class" placeholder="1班">
+        </form>
+      </td>
+      <td>学号：</td>
+      <td>
+        <form method="post" action="save.php" style="display: inline;">
+          <input type="text" name="number" placeholder="001">
+        </form>
+      </td>
+      <td>姓名：</td>
+      <td>
+        <form method="post" action="save.php" style="display: inline;">
+          <input type="text" name="name" placeholder="王小闹">
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <h2>
+    一、填空题（每空5分，共20分）
+  </h2>
+  <ol>
+    <li>
+      UML的中文全称是：
+      <form method="post" action="save.php" style="display: inline;">
+        <input type="text" name="dfn" placeholder="统一建模语言">
+      </form>
+    </li>
+    <li>
+      对象最突出的特征是：
+      <form method="post" action="save.php" style="display: inline;">
+        <input type="text" name="property1" placeholder="封装性">
+        <input type="text" name="property2" placeholder="继承性">
+        <input type="text" name="property3" placeholder="多态性">
+      </form>
+    </li>
+  </ol>
+
+  <h2>
+    二、选择题（每题10分，共20分）
+  </h2>
+  <ol>
+    <li>
+      UML与软件工程的关系是：
+      <form method="post" action="save.php">
+        <input type="radio" name="select01" id="s1-a">(A) UML就是软件工程 <br>
+        <input type="radio" name="select01" id="s1-b" checked>(B) UML参与到软件工程中软件开发过程的几个阶段 <br>
+        <input type="radio" name="select01" id="s1-c">(C) UML与软件工程无关 <br>
+        <input type="radio" name="select01" id="s1-d">(D) UML是软件工程的一部分
+      </form>
+    </li>
+    <li>
+      Java语言支持：
+      <form method="post" action="save.php">
+        <input type="radio" name="select02" id="s2-a" checked>(A) 单继承 <br>
+        <input type="radio" name="select02" id="s2-b">(B) 多继承 <br>
+        <input type="radio" name="select02" id="s2-c">(C) 单继承和多继承都支持 <br>
+        <input type="radio" name="select02" id="s2-d">(D) 单继承和多继承都不支持
+      </form>
+    </li> 
+  </ol> 
+
+  <h2>
+    三、多择题（每题10分，共20分）
+  </h2>
+  <ol>
+    <li>
+      用例的粒度分为以下哪三种：
+      <form method="post" action="save.php">
+        <input type="checkbox" name="multi-select01" id="ms1-a" checked>(A) 概述级<br>
+        <input type="checkbox" name="multi-select01" id="ms1-b" checked>(B) 需求级<br>
+        <input type="checkbox" name="multi-select01" id="ms1-c">(C) 用户目标级<br>
+        <input type="checkbox" name="multi-select01" id="ms1-d" checked>(D) 子功能级
+      </form>      
+    </li>
+    <li>
+      类图由以下哪三部分组成：
+      <form method="post" action="save.php">
+        <input type="checkbox" name="multi-select02" id="ms2-a" checked>(A) 名称(Name) <br>
+        <input type="checkbox" name="multi-select02" id="ms2-b" checked>(B) 属性(Attribute) <br>
+        <input type="checkbox" name="multi-select02" id="ms2-c" checked>(C) 操作(Operation) <br>
+        <input type="checkbox" name="multi-select02" id="ms2-d">(D) 方法(Function)
+      </form>
+    </li> 
+  </ol>
+
+  <h2>
+      四、判断题（每题10分，共20分）
+  </h2>
+  <ol>
+    <li>
+      用例图只是用于和客户交流和沟通的，用于确定需求。
+      <form method="post" action="save.php" style="display: inline;">
+        <input type="radio" name="judgement01" id="j1-true">√
+        <input type="radio" name="judgement01" id="j1-false" checked>×
+      </form>
+    </li>
+    <li>
+      在状态图中，终止状态在一个状态图中允许由任意多个。
+      <form method="post" action="save.php" style="display: inline;">
+        <input type="radio" name="judgement02" id="j2-true" checked>√
+        <input type="radio" name="judgement02" id="j2-false">×
+      </form>
+    </li> 
+  </ol>  
+
+  <h2>
+    五、简答题（每题20分，共20分）
+  </h2>
+  <ol>
+    <li>简述什么是模型及模型的表现形式？</li> 
+    <form method="post" action="save.php">
+      <textarea name="answer" id="ans" cols="90" rows="10" placeholder="模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"></textarea><br>
+    </form>
+  </ol>
+  <button type="submit">计算分数</button>
+</body>
+</html>

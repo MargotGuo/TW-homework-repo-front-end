@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Candara";
+  src: url(font/Candara.ttf);
+}
+.box {
+  width: 320px;
+}
+.box-top {
+  padding-left: 20px;
+  height: 65px;
+  border-radius: 5px;
+  background-color: #f65040;
+}
+.box-bottom {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.triangle-top {
+  display: inline;
+  position: relative;
+  left: 33px;
+  top: 15px;
+  width: 0;
+  height: 0;
+  /*triangle*/
+  border: 10px;
+  border: 10px;
+  border-top-width: 15px;
+  border-style: solid;
+  border-color:  #ffffff transparent transparent transparent;
+}
+.triangle-bottom {
+  width: 0;
+  height: 0;
+  margin-left: 265px;
+  /*triangle*/
+  border-top-width: 20px;
+  border-bottom-width: 15px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #f65040 transparent;
+} 
+.link {
+  line-height: 65px;
+  font-size: 30px;
+  font-family: "Candara";
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #f65040;
+}
+ul.box-bottom li {
+  height: 65px;
+  padding-left: 65px;
+  background-color: #f65040;
+  background-image: url(icons/bg-image.png);
+  background-repeat: no-repeat;
+  background-size: 140px;
+}
+.like {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-position: 15px -30px;
+}
+.favorites {
+  margin-top: 1px;
+  background-position: -43px 15px;
+}
+.discuss {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 1px;
+  background-position: 15px 17px;
+}
