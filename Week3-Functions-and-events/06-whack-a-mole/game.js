@@ -50,8 +50,6 @@ window.onload = function () {
     setTimeout(() => {
       clearInterval(intervalID);
     }, gameTime - 400);
-    
-
   }
 
   function mainGameSection() {

@@ -26,40 +26,77 @@ function mouseAction(event) {
 function displayAll() {
   pageStatus = "all";
   clearNode();
-  var newIndex = 0;
-  for (var index = 1, len = localStorage.length; index <= len; index++) {
-    var localTaskDetail = JSON.parse(localStorage.getItem(index));
-    if (localTaskDetail.status) {
-      newIndex++;
-      displayNewTask(newIndex, localTaskDetail);
-    }
+  if (localStorage.getItem("task")) {
+    var data = JSON.parse(localStorage.getItem("task"));
+    var displayIndex = 1;
+    data.map((task) => {
+      displayNewTask(data.indexOf(task), task, displayIndex);
+      displayIndex++;
+    });
   }
 }
 
-function displayActive() {
+function displayActive(){
   pageStatus = "active";
   clearNode();
-  var newIndex = 0;
-  for (var index = 1, len = localStorage.length; index <= len; index++) {
-    var localTaskDetail = JSON.parse(localStorage.getItem(index));
-    if (!localTaskDetail.checked && localTaskDetail.status) {
-      newIndex++;
-      displayNewTask(newIndex, localTaskDetail);
-    }
+  if (localStorage.getItem("task")) {
+    var data = JSON.parse(localStorage.getItem("task"));
+    var displayIndex = 1;
+    data.map((task) => {
+      if (!task.checked) {
+        displayNewTask(data.indexOf(task), task, displayIndex);
+        displayIndex++;
+      }
+    });
   }
 }
 
 function displayComplete() {
   pageStatus = "complete";
   clearNode();
-  var newIndex = 0;
-  for (var index = 1, len = localStorage.length; index <= len; index++) {
-    var localTaskDetail = JSON.parse(localStorage.getItem(index));
-    if (localTaskDetail.checked && localTaskDetail.status) {
-      newIndex++;
-      displayNewTask(newIndex, localTaskDetail);
-    }
+  if (localStorage.getItem("task")){
+    var data = JSON.parse(localStorage.getItem("task"));
+    var displayIndex = 1;
+    data.map((task) => {
+      if (task.checked) {
+        displayNewTask(data.indexOf(task), task, displayIndex);
+        displayIndex++;
+      }
+    });
   }
+}
+
+function displayNewTask(index, item, displayIndex) {
+  var newTask = document.createElement("li");
+  newTask.setAttribute("id", index);
+  var style = setStyle(newTask, displayIndex, item);
+  newTask.innerHTML = 
+    "<p class='" + style[0] + "'>" + displayIndex + "." + "</p>" +
+    "<input type='checkbox' name='task-done'/>" + 
+    "<p class='" + style[1] + "'>" + item.task + "</p>" +
+    "<img name='close' class='close' src='icon/close.svg'>";
+  if (item.checked) {
+    newTask.childNodes[1].setAttribute("checked", true);
+  }
+}
+
+function setStyle(newTask, displayIndex, item) {
+  document.getElementById("list").appendChild(newTask);
+  if ((displayIndex) % 2) {
+    newTask.setAttribute("class", "task-item");
+  } else {
+    newTask.setAttribute("class", "task-item colored");
+  }
+  var indexClass;
+  var contentClass;
+  if (item.checked) {
+    indexClass = "index-done";
+    contentClass = "task-content-done";
+  } else {
+    indexClass = "index";
+    contentClass = "task-content";
+  }
+  return [indexClass, contentClass];
 }
 
 function addNewTask() {
@@ -67,68 +104,48 @@ function addNewTask() {
     var newTaskContent = document.getElementById("new-task").value;
   }
   if (newTaskContent) {
-    var newTaskIndex = localStorage.length + 1;
+    var data;
+    var newTaskIndex;
+    if (localStorage.getItem("task")) {
+      data = JSON.parse(localStorage.getItem("task"));
+      newTaskIndex = data.length;
+    } else {
+      data = [];
+      newTaskIndex = 0;
+    }
     var newTaskDetail = {
-      id: newTaskIndex,
       task: newTaskContent,
       checked: false,
-      status: true
     };
-    var newTaskString = JSON.stringify(newTaskDetail);
-    localStorage.setItem(newTaskIndex, newTaskString);
-    var showIndex = document.getElementById("list").childNodes.length;
-    displayNewTask(showIndex, newTaskDetail);
+    data[newTaskIndex] = newTaskDetail;
+    var dataString = JSON.stringify(data);
+    localStorage.setItem("task", dataString);
+    var displayIndex = document.getElementById("list").childNodes.length + 1;
+    displayNewTask(newTaskIndex, newTaskDetail, displayIndex);
     document.getElementById("new-task").value = "";
-  }
-}
-
-function displayNewTask(index, taskStorage) {
-  var task = document.createElement("li");
-  task.setAttribute("id", taskStorage.id);
-  document.getElementById("list").appendChild(task);
-  if (index % 2) {
-    task.setAttribute("class", "task-item");
-  } else {
-    task.setAttribute("class", "task-item ` colored");
-  }
-  var indexClass;
-  var contentClass;
-  if (taskStorage.checked) {
-    indexClass = "index-done";
-    contentClass = "task-content-done";
-  } else {
-    indexClass = "index";
-    contentClass = "task-content";
-  }
-  task.innerHTML = 
-    "<p class='" + indexClass + "'>" + index + "." + "</p>" +
-    "<input type='checkbox' name='task-done'/>" + 
-    "<p class='" + contentClass + "'>" + taskStorage.task + "</p>" +
-    "<img name='close' class='close' src='icon/close.svg'>";
-  if (taskStorage.checked) {
-    task.childNodes[1].setAttribute("checked", true);
   }
 }
 
 function markAsDone(event) {
   var targetIndex = event.target.parentNode.id;
-  var targetList = document.getElementById(targetIndex);
-  var targetStorage = JSON.parse(localStorage.getItem(targetIndex));
+  var targetRow = document.getElementById(targetIndex);
+  var data = JSON.parse(localStorage.getItem("task"));
+  var targetStorage = data[targetIndex];
   var taskStatus = targetStorage.checked;
   if (taskStatus) {
     targetStorage.checked = false;
-    targetList.childNodes[0].setAttribute("class", "index");
-    targetList.childNodes[2].setAttribute("class", "task-content");
+    targetRow.childNodes[0].setAttribute("class", "index");
+    targetRow.childNodes[2].setAttribute("class", "task-content");
   } else {
     targetStorage.checked = true;
-    targetList.childNodes[0].setAttribute("class", "index-done");
-    targetList.childNodes[2].setAttribute("class", "task-content-done");
+    targetRow.childNodes[0].setAttribute("class", "index-done");
+    targetRow.childNodes[2].setAttribute("class", "task-content-done");
   }
-  var targetString = JSON.stringify(targetStorage);
-  localStorage.setItem(targetIndex, targetString);
+  var dataString = JSON.stringify(data);
+  localStorage.setItem("task", dataString);
 }
 
-function deleteTask(event) {
+function deleteTask() {
   var userMessage = confirm("是否删除该 TODO？");
   if (userMessage) {
     confirmDelete(event);
@@ -137,10 +154,10 @@ function deleteTask(event) {
 
 function confirmDelete(event) {
   var targetIndex = event.target.parentNode.id;
-  var targetStorage = JSON.parse(localStorage.getItem(targetIndex));
-  targetStorage.status = false;
-  var targetString = JSON.stringify(targetStorage);
-  localStorage.setItem(targetIndex, targetString);
+  var data = JSON.parse(localStorage.getItem("task"));
+  data.splice(targetIndex, 1);
+  var dataString = JSON.stringify(data);
+  localStorage.setItem("task", dataString);
   if (pageStatus === "all") {
     displayAll();
   } else if (pageStatus === "active") {
@@ -155,5 +172,4 @@ function clearNode() {
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
-  list.innerHTML = " ";
 }
