@@ -105,23 +105,23 @@ function addNewTask() {
   }
   if (newTaskContent) {
     var data;
-    var newTaskIndex;
+    var newStorageIndex;
     if (localStorage.getItem("task")) {
       data = JSON.parse(localStorage.getItem("task"));
-      newTaskIndex = data.length;
+      newStorageIndex = data.length;
     } else {
       data = [];
-      newTaskIndex = 0;
+      newStorageIndex = 0;
     }
     var newTaskDetail = {
       task: newTaskContent,
       checked: false,
     };
-    data[newTaskIndex] = newTaskDetail;
+    data[newStorageIndex] = newTaskDetail;
     var dataString = JSON.stringify(data);
     localStorage.setItem("task", dataString);
     var displayIndex = document.getElementById("list").childNodes.length + 1;
-    displayNewTask(newTaskIndex, newTaskDetail, displayIndex);
+    displayNewTask(newStorageIndex, displayIndex, newTaskDetail);
     document.getElementById("new-task").value = "";
   }
 }
