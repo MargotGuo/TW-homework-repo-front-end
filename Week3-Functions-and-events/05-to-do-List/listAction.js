@@ -30,7 +30,7 @@ function displayAll() {
     var data = JSON.parse(localStorage.getItem("task"));
     var displayIndex = 1;
     data.map((task) => {
-      displayNewTask(data.indexOf(task), task, displayIndex);
+      displayNewTask(data.indexOf(task), displayIndex, task);
       displayIndex++;
     });
   }
@@ -44,7 +44,7 @@ function displayActive(){
     var displayIndex = 1;
     data.map((task) => {
       if (!task.checked) {
-        displayNewTask(data.indexOf(task), task, displayIndex);
+        displayNewTask(data.indexOf(task), displayIndex, task);
         displayIndex++;
       }
     });
@@ -59,33 +59,33 @@ function displayComplete() {
     var displayIndex = 1;
     data.map((task) => {
       if (task.checked) {
-        displayNewTask(data.indexOf(task), task, displayIndex);
+        displayNewTask(data.indexOf(task), displayIndex, task);
         displayIndex++;
       }
     });
   }
 }
 
-function displayNewTask(index, item, displayIndex) {
-  var newTask = document.createElement("li");
-  newTask.setAttribute("id", index);
-  var style = setStyle(newTask, displayIndex, item);
-  newTask.innerHTML = 
+function displayNewTask(storageIndex, displayIndex, item) {
+  var newTaskLine = document.createElement("li");
+  document.getElementById("list").appendChild(newTaskLine);
+  newTaskLine.setAttribute("id", storageIndex);
+  var style = setStyle(newTaskLine, displayIndex, item);
+  newTaskLine.innerHTML = 
     "<p class='" + style[0] + "'>" + displayIndex + "." + "</p>" +
     "<input type='checkbox' name='task-done'/>" + 
     "<p class='" + style[1] + "'>" + item.task + "</p>" +
     "<img name='close' class='close' src='icon/close.svg'>";
   if (item.checked) {
-    newTask.childNodes[1].setAttribute("checked", true);
+    newTaskLine.childNodes[1].setAttribute("checked", true);
   }
 }
 
-function setStyle(newTask, displayIndex, item) {
-  document.getElementById("list").appendChild(newTask);
+function setStyle(newTaskLine, displayIndex, item) {
   if ((displayIndex) % 2) {
-    newTask.setAttribute("class", "task-item");
+    newTaskLine.setAttribute("class", "task-item");
   } else {
-    newTask.setAttribute("class", "task-item colored");
+    newTaskLine.setAttribute("class", "task-item colored");
   }
   var indexClass;
   var contentClass;
