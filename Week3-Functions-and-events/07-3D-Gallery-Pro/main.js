@@ -4,17 +4,39 @@ var left = 0;
 var outleft = content.length -1;
 var right = 2;
 var outright = 3;
-switchPage();
-console.log(content);
+initPage();
 
 window.setInterval(switchPage, 2000);
 
 function switchPage() {
+  removeStyle();
+  switchIndex();
+  setStyle();
+}
+
+function initPage() {
+  content[presentMain].setAttribute("class", "show change current");
+  content[left].setAttribute("class", "show left");
+  content[right].setAttribute("class", "show right");
+}
+
+function setStyle() {
+  content[presentMain].setAttribute("class", "show change current");
+  content[left].setAttribute("class", "show left change");
+  content[right].setAttribute("class", "show right change");
+  content[outleft].setAttribute("class", "outleft change");
+  content[outright].setAttribute("class", "outright change");
+}
+
+function removeStyle() {
   content[presentMain].setAttribute("class", "");
   content[left].setAttribute("class", "");
   content[right].setAttribute("class", "");
   content[outleft].setAttribute("class", "");
   content[outright].setAttribute("class", "");
+}
+
+function switchIndex() {
   presentMain++;
   left++;
   right++;
@@ -35,9 +57,4 @@ function switchPage() {
   if (outright === content.length) {
     outright = 0;
   }
-  content[presentMain].setAttribute("class", "show change current");
-  content[left].setAttribute("class", "show left change");
-  content[right].setAttribute("class", "show right change");
-  content[outleft].setAttribute("class", "outleft change");
-  content[outright].setAttribute("class", "outright change");
 }
