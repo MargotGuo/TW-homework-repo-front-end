@@ -100,9 +100,7 @@ function setStyle(newTaskLine, displayIndex, item) {
 }
 
 function addNewTask() {
-  if (pageStatus !== "complete") {
-    var newTaskContent = document.getElementById("new-task").value;
-  }
+  var newTaskContent = document.getElementById("new-task").value;
   if (newTaskContent) {
     var data;
     var newStorageIndex;
@@ -120,8 +118,10 @@ function addNewTask() {
     data[newStorageIndex] = newTaskDetail;
     var dataString = JSON.stringify(data);
     localStorage.setItem("task", dataString);
-    var displayIndex = document.getElementById("list").childNodes.length + 1;
-    displayNewTask(newStorageIndex, displayIndex, newTaskDetail);
+    if (pageStatus !== "complete") {
+      var displayIndex = document.getElementById("list").childNodes.length + 1;
+      displayNewTask(newStorageIndex, displayIndex, newTaskDetail);
+    }
     document.getElementById("new-task").value = "";
   }
 }
