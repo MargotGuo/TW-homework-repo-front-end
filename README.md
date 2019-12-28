@@ -19,6 +19,7 @@
 * [**DOM: Shopping Cart**](https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/03-DOM02-shopping-cart/shoppingCart.html)
 * [**DOM: To-do list**](https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/05-to-do-List/listIndex.html)
 * [**Stage1, Project3: Whack A Mole!**](https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/06-whack-a-mole/whack-a-mole.html)
+* [**Stage1, Project3: 3D Gallery**](https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/07-3D-Gallery-Pro/index.html)
 
 ### Week-4 Node and Collection-Calculation
 
