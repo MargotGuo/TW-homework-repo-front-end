@@ -2,16 +2,18 @@
 
 
 
-在project2中我们写了一个普通的3d gallery，现在我们需要让这个3d gallery滚动起来，就想这样![](https://ws3.sinaimg.cn/large/006tNc79gy1ftvcqp9858g313l0di7wi.gif)
+* 3D Gallery Pro is now avaliable at https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/07-3D-Gallery-Pro/index.html
 
-其中有几点需要注意：
 
-1. 间隔2s滚动一次
 
-2. 注意每个图片下面👇的URL地址在每次图片滚动到中间的时候会显示出来
+AC：
 
-3. style.css文件中给出了可能会用到的样式
+- [x] 间隔2s滚动一次
 
-4. index.html文件已经引入了main.js文件，请在main.js文件中写js代码
+- [x] 注意每个图片下面👇的URL地址在每次图片滚动到中间的时候会显示出来
 
-   
+- [x] style.css文件中给出了可能会用到的样式
+
+- [x] index.html文件已经引入了main.js文件，请在main.js文件中写js代码
+
+  
