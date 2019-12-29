@@ -57,46 +57,48 @@ body {
 
 .list {
   margin: 10px 0;
+  padding-left: 15px;
 }
 
 .task-item {
   font-size: 15px;
   line-height: 30px;
-  display: flex;
-  align-items: center;
   position: relative;
 }
 
-.colored {
-  background: repeating-linear-gradient(to right, #ffffff, 15px, #f3ebeb, 1px, #f3ebeb);
+.task-item:nth-child(odd) {
+  background: #ffffff;
 }
 
-.index {
-  width: 10px;
-  margin-right: 10px;
+.task-item:nth-child(even) {
+  background: #f3ebeb;
 }
 
-.index-done {
-  width: 10px;
-  margin-right: 10px;
+.active {
+  color: #000000;
+  text-decoration: none;
+}
+
+.complete {
   color: #A4A4A4;
   text-decoration: line-through;
+}
+
+.checkbox {
+  margin: 2px;
+  position: absolute;
+  left: 5px;
+  top: 7px
 }
 
 .task-content {
-  padding-left: 5px;
+  padding-left: 25px;
 }
-
-.task-content-done {
-  padding-left: 5px;
-  color: #A4A4A4;
-  text-decoration: line-through;
-}
-
 .close {
   height: 20px;
   position: absolute;
   right: 10px;
+  top: 5px;
   opacity: 0.5;
   display: none;
   cursor: pointer;

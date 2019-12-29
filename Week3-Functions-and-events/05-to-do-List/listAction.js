@@ -1,148 +1,107 @@
-displayAll();
-var pageStatus = "all"; // "all" | "active" | "complete"
+const STATUS = {
+  ALL: "all",
+  ACTIVE: "active",
+  COMPLETE: "complete"
+};
+var pageStatus = STATUS.ALL;
+displayTask();
 document.addEventListener("click", mouseAction);
 document.addEventListener("keypress", (event) => {
-  if (event.which === 13) { 
+  if (event.code === "Enter" && document.getElementById("new-task").value) { 
     addNewTask();
   }
 });
 
 function mouseAction(event) {
-  if (event.target.id === "confirm-task") {
+  if (event.target.id === "confirm-task" && document.getElementById("new-task").value) {
     addNewTask();
-  } else if (event.target.name === "task-done") {
+  }
+  if (event.target.name === "task-done") {
     markAsDone(event);
-  } else if (event.target.id === "all") {
-    displayAll();
-  } else if (event.target.id === "active") {
-    displayActive();
-  } else if (event.target.id === "complete") {
-    displayComplete();
-  } else if (event.target.name === "close") {
+  }
+  if (event.target.id === "all" && localStorage.getItem("task")) {
+    pageStatus = STATUS.ALL;
+    clearNode();
+    displayTask();
+  }
+  if (event.target.id === "active" && localStorage.getItem("task")) {
+    pageStatus = STATUS.ACTIVE;
+    clearNode();
+    displayTask();
+  }
+  if (event.target.id === "complete" && localStorage.getItem("task")) {
+    pageStatus = STATUS.COMPLETE;
+    clearNode();
+    displayTask();
+  }
+  if (event.target.name === "close") {
     deleteTask(event);
   }
 }
 
-function displayAll() {
-  pageStatus = "all";
-  clearNode();
-  if (localStorage.getItem("task")) {
-    var data = JSON.parse(localStorage.getItem("task"));
-    var displayIndex = 1;
-    data.map((task) => {
-      displayNewTask(data.indexOf(task), displayIndex, task);
-      displayIndex++;
+function displayTask() {
+  var allData = JSON.parse(localStorage.getItem("task"));
+  var displayData;
+  if (pageStatus === STATUS.ALL) {
+    displayData = allData;
+  }
+  if (pageStatus === STATUS.ACTIVE) {
+    displayData = allData.filter((task) => {
+      return !task.checked;
     });
   }
-}
-
-function displayActive(){
-  pageStatus = "active";
-  clearNode();
-  if (localStorage.getItem("task")) {
-    var data = JSON.parse(localStorage.getItem("task"));
-    var displayIndex = 1;
-    data.map((task) => {
-      if (!task.checked) {
-        displayNewTask(data.indexOf(task), displayIndex, task);
-        displayIndex++;
-      }
+  if (pageStatus === STATUS.COMPLETE) {
+    displayData = allData.filter((task) => {
+      return task.checked;
     });
   }
+  displayData.forEach((task) => {
+    displayNewTask(allData.indexOf(task), task);
+  });
 }
 
-function displayComplete() {
-  pageStatus = "complete";
-  clearNode();
-  if (localStorage.getItem("task")){
-    var data = JSON.parse(localStorage.getItem("task"));
-    var displayIndex = 1;
-    data.map((task) => {
-      if (task.checked) {
-        displayNewTask(data.indexOf(task), displayIndex, task);
-        displayIndex++;
-      }
-    });
-  }
-}
-
-function displayNewTask(storageIndex, displayIndex, item) {
-  var newTaskLine = document.createElement("li");
-  document.getElementById("list").appendChild(newTaskLine);
-  newTaskLine.setAttribute("id", storageIndex);
-  var style = setStyle(newTaskLine, displayIndex, item);
-  newTaskLine.innerHTML = 
-    "<p class='" + style[0] + "'>" + displayIndex + "." + "</p>" +
-    "<input type='checkbox' name='task-done'/>" + 
-    "<p class='" + style[1] + "'>" + item.task + "</p>" +
-    "<img name='close' class='close' src='icon/close.svg'>";
-  if (item.checked) {
-    newTaskLine.childNodes[1].setAttribute("checked", true);
-  }
-}
-
-function setStyle(newTaskLine, displayIndex, item) {
-  if ((displayIndex) % 2) {
-    newTaskLine.setAttribute("class", "task-item");
-  } else {
-    newTaskLine.setAttribute("class", "task-item colored");
-  }
-  var indexClass;
-  var contentClass;
-  if (item.checked) {
-    indexClass = "index-done";
-    contentClass = "task-content-done";
-  } else {
-    indexClass = "index";
-    contentClass = "task-content";
-  }
-  return [indexClass, contentClass];
+function displayNewTask(storageIndex, item) {
+  document.getElementById("list").innerHTML +=
+  "<li id=" + storageIndex + " class='task-item" + `${item.checked ? " complete" : " active"}` + "'>" +
+    "<input class='checkbox' type='checkbox' name='task-done'" + `${item.checked ? " checked" : " !checked"}` + "/>" + 
+    "<span class='task-content'>" + item.task + "</span>" +
+    "<img name='close' class='close' src='icon/close.svg'>" +
+  "</li>";
 }
 
 function addNewTask() {
   var newTaskContent = document.getElementById("new-task").value;
-  if (newTaskContent) {
-    var data;
-    var newStorageIndex;
-    if (localStorage.getItem("task")) {
-      data = JSON.parse(localStorage.getItem("task"));
-      newStorageIndex = data.length;
-    } else {
-      data = [];
-      newStorageIndex = 0;
-    }
-    var newTaskDetail = {
-      task: newTaskContent,
-      checked: false,
-    };
-    data[newStorageIndex] = newTaskDetail;
-    var dataString = JSON.stringify(data);
-    localStorage.setItem("task", dataString);
-    if (pageStatus !== "complete") {
-      var displayIndex = document.getElementById("list").childNodes.length + 1;
-      displayNewTask(newStorageIndex, displayIndex, newTaskDetail);
-    }
-    document.getElementById("new-task").value = "";
+  var data;
+  if (localStorage.getItem("task")) {
+    data = JSON.parse(localStorage.getItem("task"));
+  } else {
+    data = [];
   }
+  var newTaskDetail = {
+    task: newTaskContent,
+    checked: false,
+  };
+  if (pageStatus !== STATUS.COMPLETE) {
+    displayNewTask(data.length, newTaskDetail);
+  }
+  data.push(newTaskDetail);
+  localStorage.setItem("task", JSON.stringify(data));
+  document.getElementById("new-task").value = "";
 }
 
 function markAsDone(event) {
   var targetIndex = event.target.parentNode.id;
   var targetRow = document.getElementById(targetIndex);
   var data = JSON.parse(localStorage.getItem("task"));
-  var targetStorage = data[targetIndex];
-  var taskStatus = targetStorage.checked;
+  var taskStatus = data[targetIndex].checked;
   if (taskStatus) {
-    targetStorage.checked = false;
-    targetRow.childNodes[0].setAttribute("class", "index");
-    targetRow.childNodes[2].setAttribute("class", "task-content");
+    data[targetIndex].checked = false;
+    targetRow.setAttribute("class", "task-item active");
   } else {
-    targetStorage.checked = true;
-    targetRow.childNodes[0].setAttribute("class", "index-done");
-    targetRow.childNodes[2].setAttribute("class", "task-content-done");
+    data[targetIndex].checked = true;
+    targetRow.setAttribute("class", "task-item complete");
   }
-  var dataString = JSON.stringify(data);
-  localStorage.setItem("task", dataString);
+  localStorage.setItem("task", JSON.stringify(data));
 }
 
 function deleteTask() {
@@ -156,15 +115,9 @@ function confirmDelete(event) {
   var targetIndex = event.target.parentNode.id;
   var data = JSON.parse(localStorage.getItem("task"));
   data.splice(targetIndex, 1);
-  var dataString = JSON.stringify(data);
-  localStorage.setItem("task", dataString);
-  if (pageStatus === "all") {
-    displayAll();
-  } else if (pageStatus === "active") {
-    displayActive();
-  } else if (pageStatus === "complete") {
-    displayComplete();
-  }
+  localStorage.setItem("task", JSON.stringify(data));
+  clearNode();
+  displayTask();
 }
 
 function clearNode() {
