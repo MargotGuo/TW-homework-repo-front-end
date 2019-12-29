@@ -4,7 +4,7 @@ const STATUS = {
   COMPLETE: "complete"
 };
 var pageStatus = STATUS.ALL;
-displayTask();
+renderTask();
 document.addEventListener("click", mouseAction);
 document.addEventListener("keypress", (event) => {
   if (event.code === "Enter" && document.getElementById("new-task").value) { 
@@ -22,24 +22,24 @@ function mouseAction(event) {
   if (event.target.id === "all" && localStorage.getItem("task")) {
     pageStatus = STATUS.ALL;
     clearNode();
-    displayTask();
+    renderTask();
   }
   if (event.target.id === "active" && localStorage.getItem("task")) {
     pageStatus = STATUS.ACTIVE;
     clearNode();
-    displayTask();
+    renderTask();
   }
   if (event.target.id === "complete" && localStorage.getItem("task")) {
     pageStatus = STATUS.COMPLETE;
     clearNode();
-    displayTask();
+    renderTask();
   }
   if (event.target.name === "close") {
     deleteTask(event);
   }
 }
 
-function displayTask() {
+function renderTask() {
   var allData = JSON.parse(localStorage.getItem("task"));
   var displayData;
   if (pageStatus === STATUS.ALL) {
@@ -117,7 +117,7 @@ function confirmDelete(event) {
   data.splice(targetIndex, 1);
   localStorage.setItem("task", JSON.stringify(data));
   clearNode();
-  displayTask();
+  renderTask();
 }
 
 function clearNode() {
