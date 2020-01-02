@@ -27,7 +27,7 @@
 
 ### Week-5 Basic-ES6-OOP
 
-* [**Take-Out Food**](https://margotguo.github.io/TW-homework-repo/Week5-Basic-ES6-OOP\01-Basic-ES6\q2-take-out-food\public\index.html)
+* [**Take-Out Food**](https://margotguo.github.io/TW-homework-repo/Week5-Basic-ES6-OOP/01-Basic-ES6/q2-take-out-food/public/index.html)
 
 ------
 * the whole page is : https://margotguo.github.io/TW-homework-repo/.
