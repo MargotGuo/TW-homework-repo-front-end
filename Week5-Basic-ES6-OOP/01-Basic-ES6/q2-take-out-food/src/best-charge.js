@@ -1,59 +1,5 @@
-const menuInfo = getMenuInfo();
-
-function bestCharge(selectedItems) {
-  console.log(selectedItems);
-  let result;
-  if (isPromotionA(selectedItems) && isPromotionB(selectedItems)) {
-    console.log("a & b")
-  } else {
-    if (isPromotionA(selectedItems)) {
-      console.log("a");
-    } else if (isPromotionB(selectedItems)) {
-      console.log("b");
-    } else {
-      console.log("no");
-    }
-  }
-  return result;
-}
-
-function calculatePlanA(itemArr) {
-}
-
-function calculatePlanB(itemArr) {
-}
-
-function calculatePrice(itemArr) {
-}
-
-function compare(itemArr) {
-}
-
-function isPromotionA(itemArr) {
-  let sum = itemArr.reduce((tempSum, currentItem) => {
-    let productID = currentItem.split("x")[0].trim();
-    let productCount = currentItem.split("x")[1].trim();
-    return tempSum + Number(productCount) * menuInfo[productID].price;
-  }, 0);
-  if (sum >= 30) {
-    return true;
-  }
-  return false;
-}
-
-function isPromotionB(itemArr) {
-  let specifiedProduct = itemArr.filter((currentItem) => {
-    let productID = currentItem.split("x")[0].trim();
-    return ['ITEM0001', 'ITEM0022'].includes(productID);
-  });
-  if (specifiedProduct.length) {
-    return true;
-  }
-  return false;
-}
-
-function getMenuInfo() {
-  let menuArray = loadAllItems()
+let getMenuInfo = () => {
+  let menuArray = loadAllItems();
   let outputInfo = {};
   menuArray.forEach((item) => {
     outputInfo[item.id] = {};
@@ -61,4 +7,125 @@ function getMenuInfo() {
     outputInfo[item.id].price = item.price;
   });
   return outputInfo;
+};
+
+const menuInfo = getMenuInfo();
+
+let bestCharge = (selectedItems) => {
+  let result;  
+  if (isPlanA(selectedItems) && isPlanB(selectedItems)) {
+    result = compare(selectedItems);
+  } else {
+    if (isPlanA(selectedItems)) {
+      result = adoptPlanA(selectedItems);
+    } else if (isPlanB(selectedItems)) {
+      result = adoptPlanB(selectedItems);
+    } else if (selectedItems.length === 0) {
+      result = "您没有选择菜品";
+    } else {
+      result = noDiscount(selectedItems);
+    }
+  }
+  return result;
+};
+
+let isPlanA = (food) => {
+  let sum = getSum(food);
+  if (sum >= 30) {
+    return true;
+  }
+  return false;
+};
+
+let isPlanB = (food) => {
+  let foodInDiscount = getDiscountFood(food);
+  if (foodInDiscount.length) {
+    return true;
+  }
+  return false;
+};
+
+let getDiscountFood = (food) => {
+  let foodInDiscount = food.filter((currentFood) => {
+    let foodId = currentFood.split("x")[0].trim();
+    return ["ITEM0001", "ITEM0022"].includes(foodId);
+  });
+  return foodInDiscount;
+};
+
+let getSum = (food) => {
+  let sum = food.reduce((tempSum, currentFood) => {
+    let foodId = currentFood.split("x")[0].trim();
+    let count = Number(currentFood.split("x")[1]);
+    return tempSum + count * menuInfo[foodId].price;
+  }, 0);
+  return sum;
+};
+
+let getFoodDetail = (food) => {
+  let detail = "";
+  food.forEach((item) => {
+    let foodId = item.split("x")[0].trim();
+    let count = Number(item.split("x")[1]);
+    detail += `${menuInfo[foodId].name} x ${count} = ${menuInfo[foodId].price * count}元\n`;
+  });
+  detail = detail.substring(0, detail.length - 1);
+  return detail;
+};
+
+function showFinalInfo() {
+  let detail = getFoodDetail(arguments[0]);
+  return `============= 订餐明细 =============
+${detail}
+-----------------------------------
+${arguments[2] ? arguments[2] + 
+  "\n-----------------------------------\n" :""}总计：${arguments[1]}元
+===================================`;
 }
+
+let adoptPlanA = (food) => {
+  let sum = getSum(food) - 6;
+  let discountInfo = `使用优惠:
+满30减6元，省6元`;
+  return showFinalInfo(food, sum, discountInfo);
+};
+
+let adoptPlanB = (food) => {
+  let foodInDiscount = getDiscountFood(food);
+  let discountInfo = `使用优惠:
+指定菜品半价(${getDiscountNameB(foodInDiscount)})，省${getDiscountB(foodInDiscount)}元`;
+  let sum = getSum(food) - getDiscountB(foodInDiscount);
+  return showFinalInfo(food, sum, discountInfo);
+};
+
+let getDiscountB = (food) => {
+  let discount = food.reduce((tempDiscount, currentFood) => {
+    let foodId = currentFood.split("x")[0].trim();
+    let foodCount = Number(currentFood.split("x")[1]);
+    return tempDiscount + foodCount * 0.5 * menuInfo[foodId].price;
+  }, 0);
+  return discount;
+};
+
+let getDiscountNameB = (food) => {
+  let name = "";
+  food.forEach((currentFood) => {
+    let foodId = currentFood.split("x")[0].trim();
+    name += `${menuInfo[foodId].name}，`;
+  });
+  name = name.substring(0, name.length - 1);
+  return name;
+};
+
+let noDiscount = (food) => {
+  let sum = getSum(food);
+  return showFinalInfo(food, sum);
+};
+
+let compare = (food) => {
+  let discountB = getDiscountB(getDiscountFood(food));
+  if (discountB > 6) {
+    return adoptPlanB(food);
+  }
+  return adoptPlanA(food);
+};

@@ -1,70 +1,67 @@
+const menu = loadAllItems();
+
+let displayMenu = () => {
+  menu.forEach((item, currentIndex) => {
+    document.getElementById("items").innerHTML += `
+    <tr>
+      <td>${item.id}</td>
+      <td>${item.name}</td>
+      <td>${item.price}</td>
+      <td>
+        <button name="operation" id="minus${currentIndex}">-</button>
+        <span name="count" id="${currentIndex}">0</span>
+        <button name="operation" id="add${currentIndex}">+</button>
+      </td>
+    </tr>`;
+  });
+};
+
+let displayPromotion = () => {
+  let promotion = loadPromotions();
+  promotion.forEach((discount) => {
+    document.getElementById("promotions").innerHTML += `
+    <tr>
+      <td>${discount.type}</td>
+      <td>${(discount.items) ? discount.items : ""}</td>
+    </tr>`;
+  });
+};
+
+let calculatePrice = () => {
+  let selectedItems = [];
+  menu.forEach((item, index) => {
+    let count = document.getElementById(index).innerHTML;
+    if (count !== "0") {
+      let info = `${item.id} x ${count}`;
+      selectedItems.push(info);
+    }
+  });
+  document.getElementById("message").innerHTML = bestCharge(selectedItems);
+};
+
+let clear = () => {
+  document.getElementById("message").innerHTML = " ";
+  document.getElementsByName("count").forEach((item) => {
+    item.innerHTML = 0;
+  });
+};
+
+let changeCount = (event) => {
+  let targetId = event.target.id;
+  let operation = targetId.substring(0, targetId.length - 1);
+  let index = targetId.charAt(targetId.length - 1);
+  if (operation === "add") {
+    document.getElementById(index).innerHTML++;
+  }
+  if (operation === "minus" && (document.getElementById(index).innerHTML!== "0")) {
+    document.getElementById(index).innerHTML--;
+  }
+};
+
 displayMenu();
 displayPromotion();
 document.getElementById("calculate").addEventListener("click", calculatePrice);
 document.getElementById("clear").addEventListener("click", clear);
-
-function displayMenu() {
-  document.getElementById("items").innerHTML = `
-  <tr>
-    <th>序号</th>
-    <th>菜品代号</th>
-    <th>菜品</th>
-    <th>价格</th>
-    <th>数量</th>
-  </tr>`;
-  let menu = loadAllItems();
-  menu.forEach((item) => {
-    document.getElementById("items").innerHTML += `
-    <tr>
-      <td>${menu.indexOf(item) + 1}</td>
-      <td>${item.id}</td>
-      <td>${item.name}</td>
-      <td>${item.price}</td>
-      <td><input name="count" type="text", value=0 id="${menu.indexOf(item)}"></td>
-    </tr>`;
-  });
-}
-
-function displayPromotion() {
-  document.getElementById("promotions").innerHTML = `
-  <tr>
-    <th>序号</th>
-    <th>优惠种类</th>
-    <th>详情</th>
-  </tr>`;
-  let promotion = loadPromotions();
-  promotion.forEach((item) => {
-    document.getElementById("promotions").innerHTML += `
-    <tr>
-      <td>${promotion.indexOf(item) + 1}</td>
-      <td>${item.type}</td>
-      <td>${(item.items) ? item.items : ""}</td>
-    </tr>`
-  });
-}
-
-function calculatePrice() {
-  let menu = loadAllItems();
-  menu.forEach((item, currentIndex) => {
-    itemCount = document.getElementById(currentIndex).value;
-    menu[currentIndex].count = itemCount;
-  });
-  let selectedItems = [];
-  menu.forEach((item) => {
-    if (item.count !== "0") {
-      let info = `${item.id} x ${item.count}`
-      selectedItems.push(info);
-    };
-  });
-
-  let outputInfo = bestCharge(selectedItems);
-  return outputInfo;
-}
-
-
-function clear() {
-  document.getElementById("message").innerHTML = "";
-  document.getElementsByName("count").forEach((item) => {
-    item.value = 0;
-  });
-}
+document.getElementsByName("operation").forEach((button) => {
+  button.addEventListener("click", changeCount);
+});

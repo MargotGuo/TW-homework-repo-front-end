@@ -1,3 +1,12 @@
+# 黄焖鸡
+
+the **Take-out food** system is now available at https://margotguo.github.io/TW-homework-repo/Week5-Basic-ES6-OOP/01-Basic-ES6/q2-take-out-food/public/index.html
+
+
+
+the **test page** is now available at  https://margotguo.github.io/TW-homework-repo/Week5-Basic-ES6-OOP/01-Basic-ES6/q2-take-out-food/run-specs.html
+
+# 管道图
 
 ## 需求描述
 

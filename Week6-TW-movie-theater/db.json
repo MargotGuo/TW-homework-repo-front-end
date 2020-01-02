@@ -335,7 +335,8 @@
       "directors": "巴瑞·莱文森",
       "casts": "达斯汀·霍夫曼,汤姆·克鲁斯,瓦莱丽亚·戈利诺",
       "genres": "剧情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p942376281.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p942376281.jpg",
+      "area": "美国"
     },
     {
       "id": 1291875,
@@ -347,7 +348,8 @@
       "directors": "姜文",
       "casts": "夏雨,宁静,陶虹",
       "genres": "剧情",
-      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2564685215.webp"
+      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2564685215.webp",
+      "area": "中国大陆,中国香港"
     },
     {
       "id": 1291879,
@@ -359,7 +361,8 @@
       "directors": "黑泽明",
       "casts": "三船敏郎,千秋实,京町子",
       "genres": "犯罪,剧情,悬疑",
-      "image": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2564689879.webp"
+      "image": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2564689879.webp",
+      "area": "日本"
     },
     {
       "id": 1291990,
@@ -371,7 +374,8 @@
       "directors": "理查德·林克莱特",
       "casts": "伊桑·霍克,朱莉·德尔佩,弗农·多布切夫",
       "genres": "剧情,爱情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910924055.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910924055.jpg",
+      "area": "美国"
     },
     {
       "id": 1291992,
@@ -383,7 +387,8 @@
       "directors": "雷德利·斯科特",
       "casts": "吉娜·戴维斯,苏珊·萨兰登,哈威·凯特尔",
       "genres": "犯罪,剧情,惊悚",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p794583044.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p794583044.jpg",
+      "area": "美国,法国"
     },
     {
       "id": 1291999,
@@ -395,7 +400,8 @@
       "directors": "王家卫",
       "casts": "林青霞,金城武,梁朝伟",
       "genres": "剧情,爱情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p792381411.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p792381411.jpg",
+      "area": "中国香港"
     },
     {
       "id": 1292000,
@@ -407,7 +413,8 @@
       "directors": "大卫·芬奇",
       "casts": "爱德华·诺顿,布拉德·皮特,海伦娜·伯翰·卡特",
       "genres": "剧情,动作,悬疑",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1910926158.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1910926158.jpg",
+      "area": "美国,德国"
     },
     {
       "id": 1292001,
@@ -419,7 +426,8 @@
       "directors": "朱塞佩·托纳多雷",
       "casts": "蒂姆·罗斯,普路特·泰勒·文斯,比尔·努恩",
       "genres": "剧情,音乐",
-      "image": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2574551676.webp"
+      "image": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2574551676.webp",
+      "area": "意大利"
     },
     {
       "id": 1292052,
@@ -431,7 +439,8 @@
       "directors": "弗兰克·德拉邦特",
       "casts": "蒂姆·罗宾斯,摩根·弗里曼,鲍勃·冈顿",
       "genres": "犯罪,剧情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p480747492.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p480747492.jpg",
+      "area": "美国"
     },
     {
       "id": 1292056,
@@ -443,7 +452,8 @@
       "directors": "费利普·弥勒",
       "casts": "米歇尔·塞罗尔,柯莱儿·布翁尼许,娜德·蒂约",
       "genres": "剧情,儿童,喜剧",
-      "image": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2464686077.webp"
+      "image": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2464686077.webp",
+      "area": "法国"
     },
     {
       "id": 1292062,
@@ -455,7 +465,8 @@
       "directors": "萨姆·门德斯",
       "casts": "凯文·史派西,安妮特·贝宁,索拉·伯奇",
       "genres": "剧情,家庭",
-      "image": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p1309847196.webp"
+      "image": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p1309847196.webp",
+      "area": "美国"
     },
     {
       "id": 1292063,
@@ -467,7 +478,8 @@
       "directors": "罗伯托·贝尼尼",
       "casts": "罗伯托·贝尼尼,尼可莱塔·布拉斯基,乔治·坎塔里尼",
       "genres": "剧情,喜剧,爱情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p510861873.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p510861873.jpg",
+      "area": "意大利"
     },
     {
       "id": 1292064,
@@ -479,7 +491,8 @@
       "directors": "彼得·威尔",
       "casts": "金·凯瑞,劳拉·琳妮,艾德·哈里斯",
       "genres": "剧情,科幻",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p479682972.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p479682972.jpg",
+      "area": "美国"
     },
     {
       "id": 1292208,
@@ -491,7 +504,8 @@
       "directors": "卡迪亚·兰德,费尔南多·梅里尔斯",
       "casts": "亚历桑德雷·罗德里格斯,莱安德鲁·菲尔米诺,菲利佩·哈根森",
       "genres": "犯罪,剧情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p455677490.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p455677490.jpg",
+      "area": "巴西,法国"
     },
     {
       "id": 1292213,
@@ -503,7 +517,8 @@
       "directors": "刘镇伟",
       "casts": "周星驰,吴孟达,朱茵",
       "genres": "动作,冒险,喜剧",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2455050536.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2455050536.jpg",
+      "area": "中国大陆,中国香港"
     },
     {
       "id": 1292214,
@@ -515,7 +530,8 @@
       "directors": "布莱恩·辛格",
       "casts": "史蒂芬·鲍德温,加布里埃尔·伯恩,本尼西奥·德尔·托罗",
       "genres": "剧情,犯罪,悬疑",
-      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2537319495.webp"
+      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2537319495.webp",
+      "area": "美国,德国"
     },
     {
       "id": 1292215,
@@ -527,7 +543,8 @@
       "directors": "让-皮埃尔·热内",
       "casts": "奥黛丽·塔图,马修·卡索维茨,吕菲斯",
       "genres": "喜剧,爱情",
-      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2447590313.webp"
+      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2447590313.webp",
+      "area": "法国,德国"
     },
     {
       "id": 1292217,
@@ -539,7 +556,8 @@
       "directors": "大卫·林奇",
       "casts": "娜奥米·沃茨,劳拉·哈灵,安·米勒",
       "genres": "剧情,悬疑,惊悚",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p792248233.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p792248233.jpg",
+      "area": "美国,法国"
     },
     {
       "id": 1292218,
@@ -551,7 +569,8 @@
       "directors": "沃尔特·塞勒斯",
       "casts": "费尔兰德·蒙特纳哥,马里利娅·佩拉,文尼西斯·狄·奥利维拉",
       "genres": "剧情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2239441575.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2239441575.jpg",
+      "area": "巴西,法国"
     },
     {
       "id": 1292220,
@@ -563,7 +582,8 @@
       "directors": "岩井俊二",
       "casts": "中山美穗,丰川悦司,酒井美纪",
       "genres": "剧情,爱情",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p449897379.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p449897379.jpg",
+      "area": "日本"
     },
     {
       "id": 1292223,
@@ -575,7 +595,8 @@
       "directors": "大卫·芬奇",
       "casts": "摩根·弗里曼,布拉德·皮特,凯文·史派西",
       "genres": "剧情,犯罪,悬疑",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p457631605.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p457631605.jpg",
+      "area": "美国"
     },
     {
       "id": 1292224,
@@ -587,7 +608,8 @@
       "directors": "米洛斯·福尔曼",
       "casts": "杰克·尼科尔森,丹尼·德维托,克里斯托弗·洛伊德",
       "genres": "剧情",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p792238287.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p792238287.jpg",
+      "area": "美国"
     },
     {
       "id": 1292233,
@@ -599,7 +621,8 @@
       "directors": "斯坦利·库布里克",
       "casts": "马尔科姆·麦克道威尔,帕特里克·马基,迈克尔·贝茨",
       "genres": "犯罪,剧情,科幻",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p529908155.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p529908155.jpg",
+      "area": "美国,英国"
     },
     {
       "id": 1292262,
@@ -611,7 +634,8 @@
       "directors": "赛尔乔·莱翁内",
       "casts": "罗伯特·德尼罗,詹姆斯·伍兹,伊丽莎白·麦戈文",
       "genres": "犯罪,剧情",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p477229647.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p477229647.jpg",
+      "area": "美国,意大利"
     },
     {
       "id": 1292270,
@@ -623,7 +647,8 @@
       "directors": "达伦·阿伦诺夫斯基",
       "casts": "艾伦·伯斯汀,杰瑞德·莱托,詹妮弗·康纳利",
       "genres": "剧情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p884936202.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p884936202.jpg",
+      "area": "美国"
     },
     {
       "id": 1292274,
@@ -635,7 +660,8 @@
       "directors": "史蒂文·斯皮尔伯格",
       "casts": "汤姆·汉克斯,凯瑟琳·泽塔-琼斯,斯坦利·图齐",
       "genres": "喜剧,剧情,爱情",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p854757687.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p854757687.jpg",
+      "area": "美国"
     },
     {
       "id": 1292281,
@@ -647,7 +673,8 @@
       "directors": "雅克·贝汉, 雅克·克鲁奥德,米歇尔·德巴",
       "casts": "雅克·贝汉",
       "genres": "纪录片",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2238274168.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2238274168.jpg",
+      "area": "法国,德国,意大利,西班牙,瑞士"
     },
     {
       "id": 1292287,
@@ -659,7 +686,8 @@
       "directors": "李惠民",
       "casts": "张曼玉,林青霞,梁家辉",
       "genres": "剧情,动作,武侠",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1421018669.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1421018669.jpg",
+      "area": "中国大陆,中国香港"
     },
     {
       "id": 1292328,
@@ -671,7 +699,8 @@
       "directors": "王家卫",
       "casts": "张国荣,张曼玉,梁朝伟",
       "genres": "剧情,动作,爱情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1982176012.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1982176012.jpg",
+      "area": "中国香港,中国台湾"
     },
     {
       "id": 1292329,
@@ -683,7 +712,8 @@
       "directors": "杨德昌",
       "casts": "张震,杨静怡,张国柱",
       "genres": "剧情,犯罪",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p848381236.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p848381236.jpg",
+      "area": "中国台湾"
     },
     {
       "id": 1292343,
@@ -695,7 +725,8 @@
       "directors": "埃里克·布雷斯,J·麦基·格鲁伯",
       "casts": "阿什顿·库彻,梅罗拉·沃特斯,艾米·斯马特",
       "genres": "剧情,悬疑,科幻",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2209066019.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2209066019.jpg",
+      "area": "美国,加拿大"
     },
     {
       "id": 1292365,
@@ -707,7 +738,8 @@
       "directors": "张艺谋",
       "casts": "葛优,巩俐,姜武",
       "genres": "剧情,家庭",
-      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2513253791.webp"
+      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2513253791.webp",
+      "area": "中国大陆,中国香港"
     },
     {
       "id": 1292370,
@@ -719,7 +751,8 @@
       "directors": "蒂姆·波顿",
       "casts": "约翰尼·德普,薇诺娜·瑞德,黛安·韦斯特",
       "genres": "剧情,奇幻,爱情",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p480956937.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p480956937.jpg",
+      "area": "美国"
     },
     {
       "id": 1292401,
@@ -731,7 +764,8 @@
       "directors": "理查德·柯蒂斯",
       "casts": "休·格兰特,科林·费尔斯,艾玛·汤普森",
       "genres": "喜剧,剧情,爱情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p475600770.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p475600770.jpg",
+      "area": "英国,美国,法国"
     },
     {
       "id": 1292402,
@@ -743,7 +777,8 @@
       "directors": "朱塞佩·托纳多雷",
       "casts": "莫妮卡·贝鲁奇,朱塞佩·苏尔法罗,Luciano Federico",
       "genres": "剧情,战争,情色",
-      "image": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2441988159.webp"
+      "image": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2441988159.webp",
+      "area": "意大利,美国"
     },
     {
       "id": 1292434,
@@ -755,7 +790,8 @@
       "directors": "杨德昌",
       "casts": "吴念真,李凯莉,金燕玲",
       "genres": "剧情,爱情,家庭",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2119675128.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2119675128.jpg",
+      "area": "中国台湾,日本"
     },
     {
       "id": 1292528,
@@ -767,7 +803,8 @@
       "directors": "丹尼·博伊尔",
       "casts": "伊万·麦克格雷格,艾文·布莱纳,约翰尼·李·米勒",
       "genres": "犯罪,剧情",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p513567548.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p513567548.jpg",
+      "area": "英国"
     },
     {
       "id": 1292656,
@@ -779,7 +816,8 @@
       "directors": "格斯·范·桑特",
       "casts": "马特·达蒙,罗宾·威廉姆斯,本·阿弗莱克",
       "genres": "剧情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p480965695.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p480965695.jpg",
+      "area": "美国"
     },
     {
       "id": 1292659,
@@ -791,7 +829,8 @@
       "directors": "吴宇森",
       "casts": "约翰·特拉沃尔塔,尼古拉斯·凯奇,琼·艾伦",
       "genres": "动作,科幻,犯罪",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2173855883.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2173855883.jpg",
+      "area": "美国"
     },
     {
       "id": 1292679,
@@ -803,7 +842,8 @@
       "directors": "王家卫",
       "casts": "张国荣,梁朝伟,张震",
       "genres": "剧情,爱情,同性",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p465939041.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p465939041.jpg",
+      "area": "中国香港,日本,韩国"
     },
     {
       "id": 1292720,
@@ -815,7 +855,8 @@
       "directors": "罗伯特·泽米吉斯",
       "casts": "汤姆·汉克斯,罗宾·怀特,加里·西尼斯",
       "genres": "剧情,爱情",
-      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2559011361.webp"
+      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2559011361.webp",
+      "area": "美国"
     },
     {
       "id": 1292722,
@@ -827,7 +868,8 @@
       "directors": "詹姆斯·卡梅隆",
       "casts": "莱昂纳多·迪卡普里奥,凯特·温丝莱特,比利·赞恩",
       "genres": "剧情,爱情,灾难",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p457760035.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p457760035.jpg",
+      "area": "美国"
     },
     {
       "id": 1292728,
@@ -839,7 +881,8 @@
       "directors": "迈克尔·贝",
       "casts": "肖恩·康纳利,尼古拉斯·凯奇,艾德·哈里斯",
       "genres": "动作,冒险",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p636048104.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p636048104.jpg",
+      "area": "美国"
     },
     {
       "id": 1292849,
@@ -851,7 +894,8 @@
       "directors": "史蒂文·斯皮尔伯格",
       "casts": "汤姆·汉克斯,汤姆·塞兹摩尔,爱德华·伯恩斯",
       "genres": "剧情,历史,战争",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1014542496.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1014542496.jpg",
+      "area": "美国"
     },
     {
       "id": 1293172,
@@ -863,7 +907,8 @@
       "directors": "贝纳尔多·贝托鲁奇",
       "casts": "尊龙,陈冲,彼得·奥图尔",
       "genres": "剧情,传记,历史",
-      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p452089833.webp"
+      "image": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p452089833.webp",
+      "area": "英国,意大利,中国大陆,法国"
     },
     {
       "id": 1293181,
@@ -875,7 +920,8 @@
       "directors": "阿尔弗雷德·希区柯克",
       "casts": "珍妮特·利,安东尼·博金斯,维拉·迈尔斯",
       "genres": "悬疑,恐怖",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1021883305.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1021883305.jpg",
+      "area": "美国"
     },
     {
       "id": 1293182,
@@ -887,7 +933,8 @@
       "directors": "西德尼·吕美特",
       "casts": "亨利·方达,马丁·鲍尔萨姆,约翰·菲德勒",
       "genres": "剧情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2173577632.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2173577632.jpg",
+      "area": "美国"
     },
     {
       "id": 1293318,
@@ -899,7 +946,8 @@
       "directors": "高畑勋",
       "casts": "辰己努,白石绫乃,志乃原良子",
       "genres": "动画,剧情,战争",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1157334208.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1157334208.jpg",
+      "area": "日本"
     },
     {
       "id": 1293350,
@@ -911,7 +959,8 @@
       "directors": "盖·里奇",
       "casts": "杰森·弗莱明,德克斯特·弗莱彻,尼克·莫兰",
       "genres": "剧情,喜剧,犯罪",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p792443418.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p792443418.jpg",
+      "area": "英国"
     },
     {
       "id": 1293359,
@@ -923,7 +972,8 @@
       "directors": "北野武",
       "casts": "北野武,关口雄介,岸本加世子",
       "genres": "剧情,喜剧",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p751835224.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p751835224.jpg",
+      "area": "日本"
     },
     {
       "id": 1293460,
@@ -935,7 +985,8 @@
       "directors": "斯坦利·多南,吉恩·凯利",
       "casts": "吉恩·凯利,唐纳德·奥康纳,黛比·雷诺斯",
       "genres": "喜剧,歌舞,爱情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1612355875.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1612355875.jpg",
+      "area": "美国"
     },
     {
       "id": 1293544,
@@ -947,7 +998,8 @@
       "directors": "乔纳森·戴米",
       "casts": "朱迪·福斯特,安东尼·霍普金斯,斯科特·格伦",
       "genres": "剧情,犯罪,惊悚",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1593414327.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1593414327.jpg",
+      "area": "美国"
     },
     {
       "id": 1293764,
@@ -959,7 +1011,8 @@
       "directors": "凯文·科斯特纳",
       "casts": "凯文·科斯特纳,玛丽·麦克唐纳,格雷厄姆·格林",
       "genres": "冒险,剧情,西部",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p499158228.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p499158228.jpg",
+      "area": "美国"
     },
     {
       "id": 1293839,
@@ -971,7 +1024,8 @@
       "directors": "威廉·惠勒",
       "casts": "奥黛丽·赫本,格利高里·派克,埃迪·艾伯特",
       "genres": "喜剧,剧情,爱情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2189265085.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2189265085.jpg",
+      "area": "美国"
     },
     {
       "id": 1293908,
@@ -983,7 +1037,8 @@
       "directors": "查理·卓别林",
       "casts": "查理·卓别林,弗吉尼亚·切瑞尔,佛罗伦斯·李",
       "genres": "喜剧,剧情,爱情",
-      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2099815842.jpg"
+      "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2099815842.jpg",
+      "area": "美国"
     },
     {
       "id": 1293929,
@@ -995,7 +1050,8 @@
       "directors": "克林特·伊斯特伍德",
       "casts": "克林特·伊斯特伍德,梅丽尔·斯特里普,安妮·科利",
       "genres": "剧情,爱情",
-      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2190558219.jpg"
+      "image": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2190558219.jpg",
+      "area": "美国"
     },
     {
       "id": 1293964,
