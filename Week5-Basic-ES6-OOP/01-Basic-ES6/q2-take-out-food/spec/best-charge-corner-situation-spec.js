@@ -1,4 +1,4 @@
-describe('Take out food', function () {
+describe('Take out food [corner situaction]', function () {
 
   it('should indicate "您没有选择菜品" when no food is choosed', function() {
     let inputs = [];

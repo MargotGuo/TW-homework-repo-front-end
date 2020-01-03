@@ -98,6 +98,19 @@ let adoptPlanB = (food) => {
   return showFinalInfo(food, sum, discountInfo);
 };
 
+let compare = (food) => {
+  let discountB = getDiscountB(getDiscountFood(food));
+  if (discountB > 6) {
+    return adoptPlanB(food);
+  }
+  return adoptPlanA(food);
+};
+
+let noDiscount = (food) => {
+  let sum = getSum(food);
+  return showFinalInfo(food, sum);
+};
+
 let getDiscountB = (food) => {
   let discount = food.reduce((tempDiscount, currentFood) => {
     let foodId = currentFood.split("x")[0].trim();
@@ -115,17 +128,4 @@ let getDiscountNameB = (food) => {
   });
   name = name.substring(0, name.length - 1);
   return name;
-};
-
-let noDiscount = (food) => {
-  let sum = getSum(food);
-  return showFinalInfo(food, sum);
-};
-
-let compare = (food) => {
-  let discountB = getDiscountB(getDiscountFood(food));
-  if (discountB > 6) {
-    return adoptPlanB(food);
-  }
-  return adoptPlanA(food);
 };
