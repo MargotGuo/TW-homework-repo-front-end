@@ -12,6 +12,16 @@ the **test page** is now available at  https://margotguo.github.io/TW-homework-r
 
 ![pipeline plan](https://ae01.alicdn.com/kf/U8eb72993e8cc4ed9a0423f6dbdfc042c7.jpg)
 
+# 作业要求
+
+- [x] 相关代码在[`src`](https://github.com/MargotGuo/TW-homework-repo/tree/master/Week5-Basic-ES6-OOP/01-Basic-ES6/q2-take-out-food/src)目录下
+- [x] 实现`best-charge.js`中的[`bestCharge`](https://github.com/MargotGuo/TW-homework-repo/blob/master/Week5-Basic-ES6-OOP/01-Basic-ES6/q2-take-out-food/src/best-charge.js)函数
+- [x] 写代码前先使用tasking整理思路并画出管道图(见上图)
+- [x] 先写[测试](https://github.com/MargotGuo/TW-homework-repo/tree/master/Week5-Basic-ES6-OOP/01-Basic-ES6/q2-take-out-food/spec)再写实现，代码须跟管道图匹配
+- [x] 代码整洁、函数粒度合适、命名有意义
+
+
+
 ## 需求描述
 
 某快餐品牌推出了它独家的外卖应用，用户可以在手机上直接下单。该应用会根据用户选择的菜品(Item)、数量(Count)和优惠方式(Promotion)进行计算，告诉用户需要支付的金额(Charge)。
