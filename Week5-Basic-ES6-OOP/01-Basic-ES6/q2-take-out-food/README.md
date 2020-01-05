@@ -10,7 +10,7 @@ the **test page** is now available at  https://margotguo.github.io/TW-homework-r
 
 # 管道图
 
-![pipeline plan](https://ae01.alicdn.com/kf/U8eb72993e8cc4ed9a0423f6dbdfc042c7.jpg)
+![pipeline plan](https://ae01.alicdn.com/kf/Ud9e444e892ca4fe2bfc327cb9de66194j.jpg)
 
 # 作业要求
 
