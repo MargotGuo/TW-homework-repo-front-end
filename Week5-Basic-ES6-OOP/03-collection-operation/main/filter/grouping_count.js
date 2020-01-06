@@ -1,8 +1,11 @@
 'use strict';
 
-function grouping_count(collection) {
-
-  //在这里写入代码
+let grouping_count = (collection) => {
+  let result = {};
+  collection.forEach(number => {
+    result[number] ? result[number]++ : result[number] = 1;
+  });
+  return result;
 }
 
 module.exports = grouping_count;

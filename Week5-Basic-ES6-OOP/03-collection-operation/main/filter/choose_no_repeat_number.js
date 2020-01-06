@@ -1,8 +1,6 @@
 'use strict';
 
-function choose_no_repeat_number(collection) {
-
-  //在这里写入代码
-}
+let choose_no_repeat_number = (collection) =>
+collection.filter((number, index) => collection.indexOf(number) === index);
 
 module.exports = choose_no_repeat_number;
