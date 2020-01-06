@@ -1,9 +1,7 @@
 'use strict';
 
-function hybrid_operation(collection) {
-
-  //在这里写入代码
-}
+let hybrid_operation = (collection) =>
+  collection.reduce((result, number) => result + number * 3 + 2, 0);
 
 module.exports = hybrid_operation;
 

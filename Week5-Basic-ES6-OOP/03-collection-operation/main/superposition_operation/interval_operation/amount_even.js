@@ -1,8 +1,9 @@
 'use strict';
 
-function amount_even(collection) {
-
-  //在这里写入代码
+let amount_even = (collection) => {
+  let targetEven = collection.filter(number =>
+    number <= 10 && number > 1 && number % 2 === 0);
+  return targetEven.reduce((sum, number) => sum + number);
 }
 
 module.exports = amount_even;
