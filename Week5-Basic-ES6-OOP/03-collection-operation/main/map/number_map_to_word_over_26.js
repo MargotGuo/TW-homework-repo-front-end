@@ -1,6 +1,14 @@
 'use strict';
-var number_map_to_word_over_26 = function(collection){
-  return ['a','m','aa','ad','y','aa'];
-};
+
+let number_map_to_word_over_26 = (collection) => collection.map(numberToChar);
+
+let numberToChar = (number) => {
+  let quotient = Math.floor((number - 1) / 26);
+  let remainder = (number - 1) % 26;
+  if (quotient) {
+    return numberToChar(quotient) + String.fromCharCode(remainder + 97);
+  }
+  return String.fromCharCode(remainder + 97);
+}
 
 module.exports = number_map_to_word_over_26;
