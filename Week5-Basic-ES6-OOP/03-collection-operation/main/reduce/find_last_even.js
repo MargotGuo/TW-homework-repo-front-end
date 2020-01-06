@@ -1,7 +1,6 @@
 'use strict';
 
-function find_last_even(collection) {
-  //在这里写入代码
-}
+let find_last_even = (collection) =>
+  collection.reduce((lastEven, number) => number % 2 === 0 ? number : lastEven);
 
 module.exports = find_last_even;

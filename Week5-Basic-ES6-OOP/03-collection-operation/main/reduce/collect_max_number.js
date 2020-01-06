@@ -1,7 +1,6 @@
 'use strict';
 
-function collect_max_number(collection) {
-  //在这里写入代码
-}
+let collect_max_number = (collection) =>
+  collection.reduce((max, current) => (max < current) ? current : max);
 
 module.exports = collect_max_number;

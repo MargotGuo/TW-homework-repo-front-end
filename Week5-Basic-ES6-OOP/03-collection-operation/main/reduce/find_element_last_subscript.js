@@ -1,7 +1,7 @@
 'use strict';
 
-function calculate_elements_sum(collection, element) {
-  //在这里写入代码
-}
+let calculate_elements_sum = (collection, element) =>
+  collection.reduce((subscript, number, index) =>
+    number === element ? index : subscript);
 
 module.exports = calculate_elements_sum;
