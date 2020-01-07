@@ -1,0 +1,149 @@
+.movie-page {
+  width: 60%;
+  margin-left: 5%;
+}
+
+.movie-section {
+  margin: 10px 0;
+  position: relative;
+}
+
+.movie-section-class {
+  color: #34495E;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 1px #D1D6DC solid;
+  line-height: 30px;
+}
+
+.movie-section-tag {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.tag, .switch {
+  font-size: 14px;
+  color: #34495E;
+  padding: 0 5px;
+  margin: 0 5px;
+  outline: none;
+  background-color: #ffffff;
+  border: none;
+  line-height: 20px;
+  border: #ffffff 0.5px solid;
+}
+
+.tag:hover, .switch:hover {
+  cursor: pointer;
+  color: #D1D6DC;
+  outline: none;
+}
+
+.tag:focus {
+  border: #D1D6DC 0.5px solid;
+  color: #7991A8;
+  border-radius: 5px;
+}
+
+.movie-display {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.aside-page {
+  width: 20%;
+}
+
+.movie-detail {
+  width: 110px;
+  margin: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-poster {
+  height: 140px;
+  display: block;
+  width: 110px;
+}
+
+.movie-title, .movie-rate{
+  margin: 8px 0;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  color: #2E2E2E;
+}
+
+.movie-rate {
+  color: #FA8072;
+  margin-left: 5px;
+}
+
+.block {
+  margin-top: 10px;
+}
+
+.block-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.block-detail span {
+  padding-left: 5px;
+  font-size: 13px;
+  line-height: 25px;
+}
+
+.block-detail span:hover {
+  color: #7991A8;
+  cursor: pointer;
+}
+
+.block-title {
+  margin: 10px 0;
+  padding: 8px 10px;
+  font-weight: 700;
+  color: #ffffff;
+  background: url(../img/winter.jpg);
+  background-size: cover;
+  background-position-y: -300px;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.5px #D1D6DC dashed;
+  font-size: 12px;
+  line-height: 25px;
+  margin: 10px 0;
+  color: #7991A8;
+}
+
+.footer-content a {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #7991A8;
+}
+
+.footer-content a:last-child {
+  padding: 0 0 0 10px;
+}

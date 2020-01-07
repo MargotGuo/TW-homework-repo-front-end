@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "main-font";
+  src: url('../font/mainfont.ttf')
+}
+
+@font-face {
+  font-family: "light-font";
+  src: url('../font/lightfont.ttf')
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "main-font";
+}
+
+.aside-bar {
+  background-color: #0B1B2B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25px;
+  opacity: 0.9;
+}
+
+.aside-bar a {
+  color: #DBDBDB;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 0 10px;
+}
+
+.aside-bar a:hover {
+  color: #ffffff;
+}
+
+.banner {
+  height: 105px;
+  background: url(../img/winter.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-content {
+  width: 85%;
+  position: relative;
+}
+
+.banner-img {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 80%;
+  opacity: 0.8;
+}
+
+.banner-search {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 10px 0;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.search-box {
+  margin-left: 30px;
+  width: 45%;
+  padding: 5px 10px;
+  height: 20px;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  outline:none;
+  box-shadow: 1px 1px 0px #273A42;
+}
+
+.search-button {
+  height: 30px;
+  width: 40px;
+  background-color: #0B1B2B;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 5px 5px 0;
+  outline:none;
+  box-shadow: 1px 1px 0px #273A42;
+}
+
+.search-button:hover {
+  cursor: pointer;
+}
+
+.search-button img {
+  height: 70%;
+  width: 70%;
+}
+
+.banner-menu a {
+  color: #DBDBDB;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 0 10px;
+}
+
+.banner-menu a:first-child {
+  margin: 0 10px 0 0;
+}
+
+.banner-menu a:hover {
+  color: #ffffff;
+}
+
+.main-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
