@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#main {
+  background-color: #EEEEEE;
+  width: 400px;
+  height: 200px;
+  padding: 50px 0;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#confirm {
+  padding: 1px 20px;
+}

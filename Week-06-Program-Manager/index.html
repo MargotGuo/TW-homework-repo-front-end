@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project Manager</title>
+  <link rel="stylesheet" href="./style/main.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./script/main.js"></script>
+</head>
+
+<body>
+  <section class="header">
+    <div class="all">
+      <div class="detail">
+        <span>所有任务</span>
+        <span class="in-time">实时</span>
+      </div>
+      <div class="data">
+        <span id="sum"></span>
+      </div>
+      <span class="iconfont status-img">&#xe60c;</span>
+    </div>
+
+    <div class="pending">
+      <div class="detail">
+        <span>未解决</span>
+        <span class="in-time">实时</span>
+      </div>
+      <div class="data">
+        <span id="pending-number"></span>
+        <span id="pending-percent"></span>
+      </div>
+      <span class="iconfont status-img">&#xe651;</span>
+    </div>
+
+    <div class="active">
+      <div class="detail">
+        <span>处理中</span>
+        <span class="in-time">实时</span>
+      </div>
+      <div class="data">
+        <span id="active-number"></span>
+        <span id="active-percent"></span>
+      </div>
+      <span class="iconfont status-img">&#xe615;</span>
+    </div>
+
+    <div class="closed">
+      <div class="detail">
+        <span>已解决</span>
+        <span class="in-time">实时</span>
+      </div>
+      <div class="data">
+        <span id="closed-number"></span>
+        <span id="closed-percent"></span>
+      </div>
+      <span class="iconfont status-img">&#xe614;</span>
+    </div>
+  </section>
+  
+  <div class="main">
+
+    <div class="search-title">
+      <h1 class="title">项目列表</h1>
+      <input id="search-box" class="search-box" type="text" placeholder="请输入项目名中的关键字进行搜索"/>
+      <span class="iconfont search-button" onclick="search()">&#xe652;</span>
+    </div>
+
+    <table class="main-table">
+      <thead class="thead">
+        <tr class="header-row">
+          <td class='header-cell'>项目名称</td>
+          <td class='header-cell'>项目描述</td>
+          <td class='header-cell'>
+            截止时间
+            <span class="iconfont sort present" id="up" onclick="sort(`up`)">&#xe645;</span>
+            <span class="iconfont sort" id="down" onclick="sort(`down`)">&#xe62a;</span>
+          </td>
+          <td class='header-cell'>状态</td>
+          <td class='header-cell'>操作</td>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="confirm-delete" class="filter">
+    <div class="alert">
+      <p class="iconfont close-icon" onclick="removeFilter()">&#xe600;</p>
+      <div class="info">
+        <span class="iconfont question">&#xe60a;</span>
+        <div>
+          <p class="hint">提示</p>
+          <p class="hint-detail">确认删除该项目吗？</p>
+        </div>
+      </div>
+      <div class="confirm-button">
+        <button id="confirm">确认</button>
+        <button id="cancel" onclick="removeFilter()">取消</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

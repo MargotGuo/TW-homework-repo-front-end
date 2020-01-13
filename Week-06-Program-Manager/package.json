@@ -1,0 +1,19 @@
+{
+  "name": "front-end-evaluation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server --watch db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "json-server": "^0.15.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.1"
+  }
+}
