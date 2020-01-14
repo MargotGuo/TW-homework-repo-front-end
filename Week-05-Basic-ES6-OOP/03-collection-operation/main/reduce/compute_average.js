@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-let compute_average = (collection) =>
+const compute_average = (collection) =>
   collection.reduce((average, number, index) =>
     (average * index + number) / (index + 1));
 

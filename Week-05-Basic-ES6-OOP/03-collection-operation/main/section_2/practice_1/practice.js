@@ -1,22 +1,19 @@
-'use strict'
+"use strict";
 
-let grouping_count = require('../../filter/grouping_count.js');
+const grouping_count = require("../../filter/grouping_count.js");
 
-let count_same_elements = (collection) => {
-  let countObj = grouping_count(collection);
+const count_same_elements = (collection) => {
+  const countObj = grouping_count(collection);
   return formatObj(countObj);
-}
+};
 
-let formatObj = (countObj) => {
-  let result = [];
-  for (let key in countObj) {
-    let tempObj = {
-      key,
-      count: countObj[key]
-    };
-    result.push(tempObj);
-  }
+const formatObj = (countObj) => {
+  const keyArr = Object.keys(countObj);
+  const result = keyArr.map(key => ({
+    key,
+    count: countObj[key]
+  }));
   return result;
-}
+};
 
 module.exports = count_same_elements;

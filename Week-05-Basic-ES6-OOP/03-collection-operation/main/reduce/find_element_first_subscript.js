@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-let calculate_elements_sum = (collection, element) => {
+const calculate_elements_sum = (collection, element) => {
   let status = true;
   return collection.reduce((subscript, number, index) => {
     if (status === true && number === element) {
@@ -9,7 +9,7 @@ let calculate_elements_sum = (collection, element) => {
     }
     return subscript;
   });
-}
+};
 
 module.exports = calculate_elements_sum;
 

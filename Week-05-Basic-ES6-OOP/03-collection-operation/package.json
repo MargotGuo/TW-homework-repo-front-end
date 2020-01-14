@@ -5,5 +5,8 @@
   },
   "dependencies": {
     "jasmine-node": "1.14.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
   }
 }

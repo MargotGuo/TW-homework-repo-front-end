@@ -1,16 +1,16 @@
-'use strict'
+"use strict";
 
-let count_same_elements = (collection) => {
-  let countObj = grouping_count(collection);
+const count_same_elements = (collection) => {
+  const countObj = grouping_count(collection);
   return formatObj(countObj);
-}
+};
 
-let grouping_count = (collection) => {
-  let result = {};
+const grouping_count = (collection) => {
+  const result = {};
   collection.forEach(element => {
     if (element.match(/\d+/)) {
-      let name = element.charAt(0);
-      let summary = Number(element.match(/\d+/));
+      const name = element.charAt(0);
+      const summary = Number(element.match(/\d+/));
       result[name] ? result[name] += summary : result[name] = summary;
     } else {
       result[element] ? result[element]++ : result[element] = 1;
@@ -19,17 +19,13 @@ let grouping_count = (collection) => {
   return result;
 };
 
-
-let formatObj = (countObj) => {
-  let result = [];
-  for (let name in countObj) {
-    let tempObj = {
-      name,
-      summary: countObj[name]
-    };
-    result.push(tempObj);
-  }
+const formatObj = (countObj) => {
+  const keyArr = Object.keys(countObj);
+  const result = keyArr.map(name => ({
+    name,
+    summary: countObj[name]
+  }));
   return result;
-}
+};
 
 module.exports = count_same_elements;
