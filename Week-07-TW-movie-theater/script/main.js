@@ -7,9 +7,18 @@ window.onload = () => {
     renderCategory(response.data, "area");
     renderCategory(response.data, "year");
   });
+  bindEvent();
 };
 
 const getData = () => axios.get("http://localhost:3000/movie");
+
+const bindEvent = () => {
+  document.addEventListener("keypress", event => {
+    if (event.code === "Enter" && document.getElementById("search-box").value) { 
+      startSearch();
+    }
+  });
+};
 
 /* -------functions for movie page ----------*/
 
@@ -87,4 +96,14 @@ const sortMovie = (moiveObj, flag) => {
   }
   return movieArr.sort((movie_1, movie_2) =>
     movie_1.key.substring(0, 4) > movie_2.key.substring(0, 4) ? -1 : 1);
+};
+
+/* ---------functions to start search ------------*/
+
+const startSearch = () => {
+  const keyWord = document.getElementById("search-box").value.split(" ");
+  let keyWordStr = "";
+  keyWord.forEach(word => keyWordStr += `+${word}`);
+  keyWordStr = keyWordStr.substring(1);
+  window.open(`search.html?q=${keyWordStr}`, "_blank");
 };
