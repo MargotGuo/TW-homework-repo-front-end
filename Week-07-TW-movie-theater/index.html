@@ -8,6 +8,8 @@
   <title>TW-theater</title>
   <link rel="stylesheet" href="./style/template.css">
   <link rel="stylesheet" href="./style/index.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./script/main.js"></script>
 </head>
 
 <body>
@@ -49,9 +51,40 @@
   <div class="main-page">
 
     <aside id="aside" class="aside-page">
+      <div class="category">
+        <p class="category-title">影片类型</p>
+        <div class="category-detail" id="classify-genres">
+          <a>全部影片 (250)</a>
+        </div>
+      </div>
+      <div class="category">
+        <p class="category-title">制片地区</p>
+        <div class="category-detail" id="classify-area">
+          <a>全部影片 (250)</a>
+        </div>
+      </div>
+      <div class="category">
+        <p class="category-title">上映时间</p>
+        <div class="category-detail" id="classify-year">
+          <a>全部影片 (250)</a>
+        </div>
+      </div>
     </aside>
 
     <div id="main" class="movie-page">
+      <section class="movie-section">
+        <p class="movie-section-class">豆瓣高分</p>
+        <div id="display-rating" class="movie-display"></div>
+      </section>
+      <section class="movie-section">
+        <p class="movie-section-class">近期上映</p>
+        <div id="display-year" class="movie-display"></div>
+      </section>
+      <section class="movie-section random">
+        <p class="movie-section-class">随便看看</p>
+        <button class="switch" id="switch" onclick="switchMovie()">换一批</button>
+        <div id="display-random" class="movie-display"></div>
+      </section>
     </div>
     
   </div>
@@ -70,8 +103,6 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="./script/main.js"></script>
 </body>
 
 </html>

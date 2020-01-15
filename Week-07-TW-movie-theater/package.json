@@ -1,19 +1,20 @@
 {
-  "name": "tw-movie-theater",
+  "name": "Week6-TW-movie-theater",
   "version": "1.0.0",
-  "description": "## 练习目标",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server --watch db.json"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Non-computer-training/tw-movie-theater.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Non-computer-training/tw-movie-theater/issues"
+  "dependencies": {
+    "axios": "^0.19.0",
+    "json-server": "^0.15.1"
   },
-  "homepage": "https://github.com/Non-computer-training/tw-movie-theater#readme"
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
 }

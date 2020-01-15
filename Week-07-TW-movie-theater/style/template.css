@@ -117,11 +117,3 @@
 .banner-menu a:hover {
   color: #ffffff;
 }
-
-.main-page {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: 30px;
-}
-
