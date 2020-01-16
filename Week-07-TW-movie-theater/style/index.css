@@ -70,6 +70,7 @@
   display: block;
   height: 150px;
   width: 115px;
+  cursor: pointer;
 }
 
 .movie-title, .movie-rate{
@@ -81,6 +82,7 @@
 
 .movie-title {
   color: #2E2E2E;
+  cursor: pointer;
 }
 
 .movie-rate {
