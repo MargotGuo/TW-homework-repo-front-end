@@ -7,18 +7,9 @@ window.onload = () => {
     renderCategory(response.data, "area");
     renderCategory(response.data, "year");
   });
-  bindEvent();
 };
 
 const getData = () => axios.get("http://localhost:3000/movie");
-
-const bindEvent = () => {
-  document.addEventListener("keypress", event => {
-    if (event.code === "Enter" && document.getElementById("search-box").value) { 
-      startSearch();
-    }
-  });
-};
 
 /* -------functions for movie page ----------*/
 
@@ -142,21 +133,9 @@ const reLayoutMainPage = (category) => {
 
 /* ---------functions to start sub-page ------------*/
 
-const startSearch = () => {
-  const keyWord = document.getElementById("search-box").value.split(" ");
-  let keyWordStr = "";
-  keyWord.forEach(word => keyWordStr += `+${word}`);
-  keyWordStr = keyWordStr.substring(1);
-  window.open(`search.html?q=${keyWordStr}`, "_blank");
-};
-
 const startDetail = (node) => {
   const movieId = node.name;
   window.open(`detail.html?q=${movieId}`, "_blank");
-};
-
-const backToMainPage = () => {
-  window.open("index.html", "_self");
 };
 
 /*------------functions for lazy load---------------*/

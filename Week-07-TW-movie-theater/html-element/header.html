@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>header</title>
+  <link rel="stylesheet" href="../style/general.css">
+  <link rel="stylesheet" href="../style/template.css">
+</head>
+<body>
+  <aside class="aside-bar">
+    <div>
+      <a href="#">ThoughtWorks</a>
+      <a href="#">洞见</a>
+      <a href="#">博客</a>
+      <a href="#">影院</a>
+      <a href="#">更多</a>
+    </div>
+    <div>
+      <a href="#">下载影院客户端</a>
+      <a href="#">登录/注册</a>
+    </div>
+  </aside>
+
+  <div class="banner">
+    <div class="banner-content">
+      <div class="banner-search">
+        <span class="title" onclick="backToMainPage()">思沃影院</span>
+        <input id="search-box" class="search-box" type="text" placeholder=" 搜索电影、电视剧、综艺、影人">
+        <button id="search-button" class="search-button"><img src="../img/search.svg" onclick="startSearch()"></button>
+      </div>
+      <div class="banner-menu">
+        <a href="#">影讯&购票</a>
+        <a href="#">选电影</a>
+        <a href="#">电视剧</a>
+        <a href="#">排行榜</a>
+        <a href="#">分类</a>
+        <a href="#">影评</a>
+        <a href="#">2019年度榜单</a>
+        <a href="#">2018书影音报告</a>
+      </div>
+      <a href="#"><img class="banner-img" src="../img/annual-list.png" alt="annual-list" /></a>
+    </div>
+  </div>
+  <script src="../script/header-action.js"></script>
+</body>
+</html>
