@@ -9,18 +9,9 @@ window.onload = () => {
       hintError();
     }
   });
-  bindEvent();
 };
 
 const getData = () => axios.get("http://localhost:3000/movie");
-
-const bindEvent = () => {
-  document.addEventListener("keypress", event => {
-    if (event.code === "Enter" && document.getElementById("search-box").value) { 
-      startSearch();
-    }
-  });
-};
 
 /*---------functions to render movie--------------*/
 
@@ -40,9 +31,9 @@ const renderSearchResult = (movie) => {
   movie.forEach(item => {
     document.getElementById("search-page").innerHTML += `
     <li class="search-detail">
-      <a href="#"><img class="poster" src="${item.image}"/></a>
+      <a name="${item.id}" onclick="startDetail(this)"><img class="poster" src="${item.image}"/></a>
       <div class="search-info">
-        <a class="movie-title" href="#"><span>${item.title} </span><span>${item.original_title} </span><span>(${item.year}) </span></a>
+        <a name="${item.id}" class="movie-title" onclick="startDetail(this)"><span>${item.title} </span><span>${item.original_title} </span><span>(${item.year}) </span></a>
         <div class="rating-box"><img class="star" id="rating-${item.id}" src="./img/star.png" /><span class="movie-rating">${item.rating}</span></div>
         <p class="movie-category"><span>${item.area.split(",").join(" / ")} / </span><span>${item.genres.split(",").join(" / ")}</span></p>
         <p class="movie-creator"><span>${item.directors.split(",").join(" / ")} / </span><span>${item.casts.split(",").join(" / ")}</span></p>
@@ -63,16 +54,9 @@ const hintError = () => {
   document.getElementById("search-page").innerHTML += "没有找到相关影片";
 };
 
-/* ---------functions to start search ------------*/
+/* ---------functions to start sub-page ------------*/
 
-const startSearch = () => {
-  const keyWord = document.getElementById("search-box").value.split(" ");
-  let keyWordStr = "";
-  keyWord.forEach(word => keyWordStr += `+${word}`);
-  keyWordStr = keyWordStr.substring(1);
-  window.open(`search.html?q=${keyWordStr}`, "_blank");
-};
-
-const backToMainPage = () => {
-  window.open("index.html", "_self");
+const startDetail = (node) => {
+  const movieId = node.name;
+  window.open(`detail.html?q=${movieId}`, "_blank");
 };

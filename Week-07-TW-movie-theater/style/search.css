@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin: 30px 8% 0 8%;
+  margin: 5px 8% 0 8%;
 }
 
 .search-page {
@@ -66,6 +66,7 @@
 .poster {
   height: 110px;
   width: 80px;
+  cursor: pointer;
 }
 
 .search-info {
@@ -85,6 +86,7 @@
 .movie-title {
   font-size: 16px;
   color: #34495E;
+  cursor: pointer;
 }
 
 .rating-box {
