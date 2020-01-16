@@ -1,4 +1,24 @@
-# 用户故事列表
+# How to start TW theater?
+
+1. clone or download this repository
+
+2. install all dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. execute mock server
+
+   ```bash
+   npm run start
+   ```
+
+4. open `index.html` in browser
+
+
+
+# User Story
 
 ## #1 — 带搜索框的导航栏
 
