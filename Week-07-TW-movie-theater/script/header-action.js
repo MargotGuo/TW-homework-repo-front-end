@@ -1,5 +1,5 @@
 const backToMainPage = () => {
-  window.open("index.html", "_self");
+  window.open("../index.html", "_parent");
 };
 
 const startSearch = () => {
