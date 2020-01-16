@@ -155,6 +155,10 @@ const startDetail = (node) => {
   window.open(`detail.html?q=${movieId}`, "_blank");
 };
 
+const backToMainPage = () => {
+  window.open("index.html", "_self");
+};
+
 /*------------functions for lazy load---------------*/
 // const getTop = (e) => {
 //   var T = e.offsetTop;

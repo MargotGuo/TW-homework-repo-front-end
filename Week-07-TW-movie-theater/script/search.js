@@ -3,7 +3,11 @@ window.onload = () => {
   fillPlaceHolder(keyWord);
   getData().then(response => {
     const searchResult = search(response.data, keyWord);
-    renderSearchResult(searchResult);
+    if (searchResult.length) {
+      renderSearchResult(searchResult);
+    } else {
+      hintError();
+    }
   });
   bindEvent();
 };
@@ -55,8 +59,9 @@ const fillPlaceHolder = (keyWord) => {
   placeHolder.forEach(div => div.innerHTML = keyWordStr);
 };
 
-
-
+const hintError = () => {
+  document.getElementById("search-page").innerHTML += "没有找到相关影片";
+};
 
 /* ---------functions to start search ------------*/
 
@@ -66,4 +71,8 @@ const startSearch = () => {
   keyWord.forEach(word => keyWordStr += `+${word}`);
   keyWordStr = keyWordStr.substring(1);
   window.open(`search.html?q=${keyWordStr}`, "_blank");
+};
+
+const backToMainPage = () => {
+  window.open("index.html", "_self");
 };
