@@ -59,12 +59,12 @@ const getIntersection = (collection_a, collection_b) =>
 
 const getSimilarMovie = (movie, allMovie) => allMovie.filter(item => {
   const genresArr = movie.genres.split(",");
-  const areaArr = movie.genres.split(",");
+  const areaArr = movie.area.split(",");
   const itemGenrsArr = item.genres.split(",");
-  const itemAreaArr = item.genres.split(",");
+  const itemAreaArr = item.area.split(",");
   const genresIntersection = getIntersection(genresArr, itemGenrsArr);
   const areaIntersection = getIntersection(areaArr, itemAreaArr);
-  if (genresIntersection.length >= 2 && areaIntersection.length) {
+  if (genresIntersection.length >=2 && areaIntersection.length) {
     return true;
   }
   return false;

@@ -38,18 +38,6 @@ const renderMovie = (movieArray, targetDiv) => {
   });
 };
 
-// const renderMovie = (movieArray, targetDiv) => {
-//   movieArray.forEach(movie => {
-//     targetDiv.innerHTML +=
-//       `<div class="movie-detail">
-//         <a target="_blank" href="${movie.alt}"><img data-src="${movie.image}" class="movie-poster" /></a>
-//         <a target="_blank" class="movie-title" href="${movie.alt}">${movie.title}
-//           <span class="movie-rate">${movie.rating}</span>
-//         </a>
-//       </div>`;
-//   });
-// };
-
 const getRandomMovie = (movieArray, len) => {
   const result = [];
   while (result.length !== len) {
@@ -64,7 +52,7 @@ const getRandomMovie = (movieArray, len) => {
 const switchMovie = () =>
   getData().then(response => renderMainPageMovie(response.data, "random"));
 
-/* ---------functions for aside classify page ------------*/
+/* ---------functions for aside page ------------*/
 
 const renderCategory = (movie, flag) => {
   const movieArray = sortMovie(countMovie(movie, flag), flag);
@@ -107,8 +95,8 @@ const renderAllMovie = () => {
   reLayoutMainPage("全部影片");
   getData().then(response => {
     renderMovie(response.data, document.getElementById("display"));
-    // window.onload = window.onscroll = lazyLoad;
   });
+  window.scrollTo(0, 0);
 };
 
 const showCategory = (node) => {
@@ -121,6 +109,7 @@ const showCategory = (node) => {
       (Number(movie.year) >= Number(category) && Number(movie.year) <= Number(category) + 9));
     renderMovie(requiredMovie, document.getElementById("display"));
   });
+  window.scrollTo(0, 0);
 };
 
 const reLayoutMainPage = (category) => {
@@ -137,23 +126,3 @@ const startDetail = (node) => {
   const movieId = node.name;
   window.open(`detail.html?q=${movieId}`, "_blank");
 };
-
-/*------------functions for lazy load---------------*/
-// const getTop = (e) => {
-//   var T = e.offsetTop;
-//   while (e === e.offsetParent) {
-//     T += e.offsetTop;
-//   }
-//   return T;
-// };
-
-// const lazyLoad = () => {
-//   const poster = Array.from(document.getElementsByClassName("movie-poster"));
-//   var H = document.documentElement.clientHeight;//获取可视区域高度
-//   var S = document.documentElement.scrollTop || document.body.scrollTop;
-//   for (var i = 0; i < poster.length; i++) {
-//     if (H + S > getTop(poster[i])) {
-//       poster[i].src = poster[i].getAttribute("data-src");
-//     }
-//   }
-// };
