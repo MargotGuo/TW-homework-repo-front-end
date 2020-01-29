@@ -2,7 +2,7 @@
 
 
 
-* 3D Gallery Pro is now avaliable at https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/07-3D-Gallery-Pro/index.html
+* 3D Gallery Pro is now available at https://margotguo.github.io/TW-homework-repo-front-end/Week-03-Functions-and-events/07-3D-Gallery-Pro/index.html
 
 
 

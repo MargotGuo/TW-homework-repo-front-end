@@ -2,7 +2,7 @@
 
 
 
-**Whack A Mole** is now available at https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/06-whack-a-mole/whack-a-mole.html
+**Whack A Mole** is now available at https://margotguo.github.io/TW-homework-repo-front-end/Week-03-Functions-and-events/06-whack-a-mole/whack-a-mole.html
 
 
 

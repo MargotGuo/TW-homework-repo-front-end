@@ -4,4 +4,4 @@
 
 the **to-do-list page** is available at:
 
-https://margotguo.github.io/TW-homework-repo/Week3-Functions-and-events/05-to-do-List/listIndex.html
+https://margotguo.github.io/TW-homework-repo-front-end/Week-03-Functions-and-events/05-to-do-List/listIndex.html
